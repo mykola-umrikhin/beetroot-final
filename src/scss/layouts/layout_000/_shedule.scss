@@ -1,0 +1,226 @@
+////START Last Result
+.last-result {
+  text-align: center;
+  margin-top: rem(50px);
+
+  @include e(title) {
+    margin: 0;
+    padding: 0;
+    @include font(rem(45px), 600, $titleFontFamily);
+    text-transform: uppercase;
+    color: $primaryBlue;
+  }
+
+  @include e(league) {
+    margin: 0;
+    padding: 0;
+    @include font(rem(30px), 600, $titleFontFamily);
+    color: $grey;
+  }
+
+  @include e(result-wrapper) {
+    display: flex;
+    // grid-template-columns: minmax(rem(200px), 1fr) 1fr minmax(rem(200px), 1fr);
+    justify-content: center;
+    width: 100%;
+  }
+
+  @include e(logo-team) {
+    flex-basis: 25%;
+    width: 100%;
+    max-width: 100%;
+    img {
+      width: rem(160px);
+      height: rem(160px);
+    }
+    @include m(left) {
+      
+    }
+    @include m(right) {
+      
+    }
+  }
+
+  @include e(result) {
+    margin-top: rem(20px);
+    display: grid;
+    grid-template-columns:
+      minmax(rem(50px), 1fr) minmax(rem(50px), 1fr) minmax(auto, 1fr)
+      minmax(rem(50px), 1fr) minmax(rem(50px), 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: rem(10px);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  @include e(teame-name) {
+    justify-self: start;
+    margin: 0;
+    @include font(rem(36px), 500, $titleFontFamily);
+    color: $primaryBlue;
+    &:last-of-type {
+      color: #592c82;
+    }
+  }
+
+  @include e(score) {
+    width: rem(80px);
+    height: rem(80px);
+    background: $primaryBlue;
+    color: $secondGold;
+    @include font(rem(48px), 500, $titleFontFamily);
+    justify-self: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:last-of-type {
+      justify-self: start;
+    }
+  }
+
+  @include e(home) {
+    align-self: start;
+    @include font(rem(60px), 500, $titleFontFamily);
+    color: $primaryBlue;
+  }
+  @include e(date) {
+    grid-column: span 5;
+    align-self: start;
+    border-top: solid 2px $secondGold;
+    margin: 0;
+    @include font(rem(24px), 500, $titleFontFamily);
+  }
+}
+//? END Last Result
+
+////START Shedule section
+.shedule {
+  width: 100%;
+  margin-top: rem(30px);
+  background: $primaryBlue;
+  padding: rem(50px) 0;
+
+  @include e(title) {
+    text-align: center;
+    margin: 0;
+
+    padding: 0;
+    @include font(rem(45px), 600, $titleFontFamily);
+    text-transform: uppercase;
+    color: $secondGold;
+  }
+
+  @include e(wrapper) {
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(rem(350px), 1fr));
+    // gap: rem(14px);
+  }
+
+  @include e(game) {
+    width: 100%;
+    padding: rem(20px) rem(15px);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 0.5fr 0.3fr 0.2fr;
+    background: $white;
+    border-radius: rem(4px);
+    justify-items: center;
+  }
+
+  @include e(logo-team) {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    // img {
+    //   width: 50% !important;
+    //   height: rem(60px);
+    // }
+  }
+
+  @include e(teame-name) {
+    @include font(rem(24px), 500, $titleFontFamily);
+    margin: 0;
+    margin-top: rem(10px);
+    padding: 0;
+    text-align: center;
+    color: $primaryBlue;
+  }
+
+  @include e(home) {
+    @include font(rem(50px), 500, $titleFontFamily);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: $primaryBlue;
+    align-self: center;
+  }
+
+  @include e(league) {
+    grid-column: span 3;
+    @include font(rem(30px), 500, $titleFontFamily);
+    margin: rem(10px) 0;
+    color: $grey;
+  }
+
+  @include e(date) {
+    grid-column: span 3;
+    @include font(rem(20px), 500, $titleFontFamily);
+    margin: 0;
+    padding: 0;
+  }
+}
+//? END Shedule section
+
+// //START SWIPER
+.swiperShedule {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper_shedule {
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-slide_shedule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide_shedule img {
+  display: inline-block;
+  text-align: center;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+.swiper-pagination_shedule {
+  position: static !important;
+  // height: rem(30px);
+  display: flex;
+  gap: rem(10px);
+  justify-content: center;
+}
+.swiper-pagination-bulet_shedule {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px !important ;
+  font-size: 40px !important;
+  color: yellow !important;
+  opacity: 1;
+  background: transparent;
+  border: 3px solid $white;
+}
+
+.swiper-pagination-bulet-active_shedule {
+  color: #fff;
+  background: transparent;
+  border: 3px solid $secondGold;
+}
+
+.swiper-pagination_shedule {
+}
+// ?END SWIPER

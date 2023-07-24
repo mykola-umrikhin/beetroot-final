@@ -1,34 +1,24 @@
 //fonts
-$google-font: "https://fonts.googleapis.com/css?family=Ubuntu:400,500";
+$google-font: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Teko:wght@300;400;600;700&display=swap';
 $prefix: prefix- !default;
 $baseFontSize: 16px;
-$baseFontFamily: "Ubuntu", sans-serif;
-$mediumFontWeight: 500;
+$titleFontFamily: 'Teko', sans-serif;
+$textFontFamily: 'Rubik', sans-serif;
+$mediumFont: 400;
+$boldFont: 700;
 
 $mobilePadding: (12px / $baseFontSize) * 1rem;
 $desktopPadding: 1rem;
 
 // Paths
 
-$imagesPath: "../i/";
-$fontsPath: "../fonts/";
-$usersFilesPath: "../userfiles/";
+$imagesPath: '../i/';
+$fontsPath: '../fonts/';
+$usersFilesPath: '../userfiles/';
 
 // Colors
 $black: #000000;
 $white: #ffffff;
-$blue: #0d6efd !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #d63384 !default;
-$red: #dc3545 !default;
-
-$colors: (
-  "black": $black,
-  "white": $white,
-  "blue": $blue,
-  "indigo": $indigo,
-  "purple": $purple,
-  "pink": $pink,
-  "red": $red,
-) !default;
+$primaryBlue: #1d428a !default;
+$secondGold: #fdc62b !default;
+$grey: #6d6d6d !default;

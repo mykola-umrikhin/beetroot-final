@@ -40,5 +40,8 @@
     "webpack-concat-files-plugin": "^0.5.2",
     "webpack-dev-server": "^4.15.0",
     "webpack-merge-and-include-globally": "^2.3.4"
+  },
+  "dependencies": {
+    "isotope-packery": "^2.0.1"
   }
 }

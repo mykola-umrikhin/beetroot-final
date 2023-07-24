@@ -1,12 +1,12 @@
-@import "vars";
+@import 'vars';
 
 @if variable_exists(google-font) {
   @import url($google-font);
 }
 
-$prefix: if(variable-exists(prefix), #{$prefix}, "");
+$prefix: if(variable-exists(prefix), #{$prefix}, '');
 
-@import "mixins/utilites";
-@import "root";
-@import "normalize";
-// @import "fonts";
+@import 'mixins/utilites';
+// @import "root";
+@import 'normalize';
+@import 'fonts';
