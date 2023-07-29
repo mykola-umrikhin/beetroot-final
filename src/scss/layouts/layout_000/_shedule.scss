@@ -6,7 +6,7 @@
   @include e(title) {
     margin: 0;
     padding: 0;
-    @include font(rem(45px), 600, $titleFontFamily);
+    @include font($h2Size, 600, $titleFontFamily);
     text-transform: uppercase;
     color: $primaryBlue;
   }
@@ -14,7 +14,7 @@
   @include e(league) {
     margin: 0;
     padding: 0;
-    @include font(rem(30px), 600, $titleFontFamily);
+    @include font($h3Size, 600, $titleFontFamily);
     color: $grey;
   }
 
@@ -34,10 +34,8 @@
       height: rem(160px);
     }
     @include m(left) {
-      
     }
     @include m(right) {
-      
     }
   }
 
@@ -106,7 +104,7 @@
     margin: 0;
 
     padding: 0;
-    @include font(rem(45px), 600, $titleFontFamily);
+    @include font($h2Size, 600, $titleFontFamily);
     text-transform: uppercase;
     color: $secondGold;
   }
@@ -132,10 +130,11 @@
     width: 100%;
     max-width: 100%;
     text-align: center;
-    // img {
-    //   width: 50% !important;
-    //   height: rem(60px);
-    // }
+    img {
+      width: rem(160px) !important;
+      height: rem(160px) !important;
+      object-fit: contain !important;
+    }
   }
 
   @include e(teame-name) {
@@ -191,8 +190,8 @@
 .swiper-slide_shedule img {
   display: inline-block;
   text-align: center;
-  width: 100% !important;
-  height: auto !important;
+  // width: 100% !important;
+  // height: auto !important;
   object-fit: cover;
 }
 

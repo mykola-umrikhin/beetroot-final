@@ -1,3 +1,5 @@
+// import { players, playersId } from "./data";
+
 // //START FETCH players
 const tab = document.querySelector('.js-statistic');
 const players = [
@@ -109,7 +111,12 @@ const players = [
   },
 ];
 let playersArr = [];
-
+const statTh = document.querySelectorAll('th');
+const removeClas = (clas1, clas2) => {
+  statTh.forEach((item) => {
+    item.classList.remove(clas1) || item.classList.remove(clas2);
+  });
+};
 const playersId =
   '?player_ids[]=224&player_ids[]=475&player_ids[]=7155648&player_ids[]=131&player_ids[]=185&player_ids[]=2189&player_ids[]=187&player_ids[]=3547240&player_ids[]=17553979&player_ids[]=666848&player_ids[]=282&player_ids[]=443&player_ids[]=17553992&player_ids[]=115&player_ids[]=666676';
 fetch(`https://www.balldontlie.io/api/v1/season_averages${playersId}`)
@@ -157,95 +164,133 @@ function renderFetch(item) {
      </tr>`;
 }
 
-const sortByStr = (arr, str, rev=false) => {
- rev ? arr.sort((a, b) => a[str].toLowerCase().localeCompare(b[str].toLowerCase())) : arr.sort((a, b) => b[str].toLowerCase().localeCompare(a[str].toLowerCase()));
+const sortByStr = (arr, str, rev = false) => {
+  rev
+    ? arr.sort((a, b) =>
+        a[str].toLowerCase().localeCompare(b[str].toLowerCase())
+      )
+    : arr.sort((a, b) =>
+        b[str].toLowerCase().localeCompare(a[str].toLowerCase())
+      );
   const arr1 = arr.map((item) => renderFetch(item));
-  return (tab.innerHTML = arr1.join(''));
+  tab.innerHTML = arr1.join('');
+  removeClas('sort-up', 'sort-down');
 };
-const sortByNumb = (arr, numb, rev=false) => {
- rev ? arr.sort((a, b) => a[numb] - b[numb]) : arr.sort((a, b) => b[numb] - a[numb]);
+const sortByNumb = (arr, numb, rev = false) => {
+  rev
+    ? arr.sort((a, b) => a[numb] - b[numb])
+    : arr.sort((a, b) => b[numb] - a[numb]);
   const arr1 = arr.map((item) => renderFetch(item));
-  return (tab.innerHTML = arr1.join(''));
+  tab.innerHTML = arr1.join('');
+  removeClas('sort-up', 'sort-down');
 };
 
 setTimeout(() => {
   document.addEventListener('click', handleSort);
+  let flag = [];
+  for (let i = 0; i <= 11; i++) {
+    flag.push(true);
+  }
+  console.log(flag);
 
-  let flag1 = true;
+  // let flag1 = true;
   function handleSort({ target }) {
-    switch (target.className) {
+    switch (target.id) {
       case 'table__players':
-        console.log(target)
-        flag1
-          ? sortByStr(playersArr, 'fullName', true)
-          : sortByStr(playersArr, 'fullName', false);
-        flag1 = !flag1;
+        flag[0]
+          ? (sortByStr(playersArr, 'fullName', true),
+            target.classList.add('sort-down'))
+          : (sortByStr(playersArr, 'fullName', false),
+            target.classList.add('sort-up'));
+        flag[0] = !flag[0];
         break;
       case 'table__games':
-        flag1
-          ? sortByNumb(playersArr, 'games_played', true)
-          : sortByNumb(playersArr, 'games_played', false);
-        flag1 = !flag1;
+        flag[1]
+          ? (sortByNumb(playersArr, 'games_played', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'games_played', false),
+            target.classList.add('sort-down'));
+        flag[1] = !flag[1];
         break;
       case 'table__mins':
-        flag1
-          ? sortByStr(playersArr, 'min', false)
-          : sortByStr(playersArr, 'min', true);
-        flag1 = !flag1;
+        flag[2]
+          ? (sortByStr(playersArr, 'min', false),
+            target.classList.add('sort-up'))
+          : (sortByStr(playersArr, 'min', true),
+            target.classList.add('sort-down'));
+        flag[2] = !flag[2];
         break;
       case 'table__points':
-        flag1
-          ? sortByNumb(playersArr, 'pts', true)
-          : sortByNumb(playersArr, 'pts', false);
-        flag1 = !flag1;
+        flag[3]
+          ? (sortByNumb(playersArr, 'pts', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'pts', false),
+            target.classList.add('sort-down'));
+        flag[3] = !flag[3];
         break;
       case 'table__two-percent':
-        flag1
-          ? sortByNumb(playersArr, 'fg_pct', true)
-          : sortByNumb(playersArr, 'fg_pct', false);
-        flag1 = !flag1;
+        flag[4]
+          ? (sortByNumb(playersArr, 'fg_pct', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'fg_pct', false),
+            target.classList.add('sort-down'));
+        flag[4] = !flag[4];
         break;
       case 'table__three-percent':
-        flag1
-          ? sortByNumb(playersArr,  'fg3_pct', true)
-          : sortByNumb(playersArr,  'fg3_pct', false);
-        flag1 = !flag1;
+        flag[5]
+          ? (sortByNumb(playersArr, 'fg3_pct', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'fg3_pct', false),
+            target.classList.add('sort-down'));
+        flag[5] = !flag[5];
         break;
       case 'table__free-percent':
-        flag1
-          ? sortByNumb(playersArr, 'ft_pct', true)
-          : sortByNumb(playersArr, 'ft_pct', false);
-        flag1 = !flag1;
+        flag[6]
+          ? (sortByNumb(playersArr, 'ft_pct', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'ft_pct', false),
+            target.classList.add('sort-down'));
+        flag[6] = !flag[6];
         break;
       case 'table__rebs':
-        flag1
-          ? sortByNumb(playersArr, 'reb', true)
-          : sortByNumb(playersArr, 'reb', false);
-        flag1 = !flag1;
+        flag[7]
+          ? (sortByNumb(playersArr, 'reb', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'reb', false),
+            target.classList.add('sort-down'));
+        flag[7] = !flag[7];
         break;
       case 'table__asissts':
-        flag1
-          ? sortByNumb(playersArr, 'ast', true)
-          : sortByNumb(playersArr, 'ast', false);
-        flag1 = !flag1;
+        flag[8]
+          ? (sortByNumb(playersArr, 'ast', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'ast', false),
+            target.classList.add('sort-down'));
+        flag[8] = !flag[8];
         break;
       case 'table__tornov':
-        flag1
-          ? sortByNumb(playersArr, 'turnover', true)
-          : sortByNumb(playersArr, 'turnover', false);
-        flag1 = !flag1;
+        flag[9]
+          ? (sortByNumb(playersArr, 'turnover', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'turnover', false),
+            target.classList.add('sort-down'));
+        flag[9] = !flag[9];
         break;
       case 'table__steals':
-        flag1
-          ? sortByNumb(playersArr, 'stl', true)
-          : sortByNumb(playersArr, 'stl', false);
-        flag1 = !flag1;
+        flag[10]
+          ? (sortByNumb(playersArr, 'stl', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'stl', false),
+            target.classList.add('sort-up'));
+        flag[10] = !flag[10];
         break;
       case 'table__blocks':
-        flag1
-          ? sortByNumb(playersArr, 'blk', true)
-          : sortByNumb(playersArr, 'blk', false);
-        flag1 = !flag1;
+        flag[11]
+          ? (sortByNumb(playersArr, 'blk', true),
+            target.classList.add('sort-up'))
+          : (sortByNumb(playersArr, 'blk', false),
+            target.classList.add('sort-up'));
+        flag[11] = !flag[11];
         break;
     }
   }

@@ -126,16 +126,26 @@
           <div class="container">
             <ul class="bottom-nav__list">
               <li class="bottom-nav__item">
-                <a href="" class="bottom-nav__link">about club</a>
+                <a href="#" class="bottom-nav__link">about club</a>
               </li>
               <li class="bottom-nav__item">
-                <a href="" class="bottom-nav__link">team</a>
+                <a href="#team" class="bottom-nav__link">team</a>
               </li>
               <li class="bottom-nav__item">
-                <a href="" class="bottom-nav__link">sportspress</a>
+                <a href="#statistic" class="bottom-nav__link">statistic</a>
+                <ul class="bottom-nav__submenu">
+                  <li class="submenu__item">
+                    <a href="#statistic-team" class="submenu__link">Team</a>
+                  </li>
+                  <li class="submenu__item">
+                    <a href="#statistic-player" class="submenu__link"
+                      >Best players</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li class="bottom-nav__item">
-                <a href="" class="bottom-nav__link">media</a>
+                <a href="#media" class="bottom-nav__link">media</a>
               </li>
               <li class="bottom-nav__item">
                 <a href="#" class="bottom-nav__link bottom-nav__link_img"
@@ -164,13 +174,13 @@
                 </ul>
               </li>
               <li class="bottom-nav__item">
-                <a href="" class="bottom-nav__link">shop</a>
+                <a href="#shop" class="bottom-nav__link">shop</a>
               </li>
               <li class="bottom-nav__item">
-                <a href="" class="bottom-nav__link">pages</a>
+                <a href="#" class="bottom-nav__link">pages</a>
               </li>
               <li class="bottom-nav__item">
-                <a href="" class="bottom-nav__link">contacts</a>
+                <a href="#" class="bottom-nav__link">contacts</a>
               </li>
             </ul>
           </div>
@@ -366,7 +376,7 @@
     <!-- //START NEWS -->
     <section>
       <div class="container">
-        <div class="news">
+        <div id="all-news" class="news">
           <h2 class="news__title">Latest news</h2>
           <!-- //START NEWS-TABS nav -->
           <div class="news__tab-nav">
@@ -395,7 +405,7 @@
               </div>
               <p class="news-item__date">Monday, December 19th</p>
               <h3 class="news-item__title">
-                <a href="#">Throwback night: ticket special</a>
+                <a href="#">1</a>
               </h3>
               <div class="news-item__tags">
                 <span class="news-item__tag"
@@ -501,7 +511,7 @@
               </div>
               <p class="news-item__date">Monday, December 19th</p>
               <h3 class="news-item__title">
-                <a href="#">Throwback night: ticket special</a>
+                <a href="#">2</a>
               </h3>
               <div class="news-item__tags">
                 <span class="news-item__tag"
@@ -607,7 +617,7 @@
               </div>
               <p class="news-item__date">Monday, December 19th</p>
               <h3 class="news-item__title">
-                <a href="#">Throwback night: ticket special</a>
+                <a href="#">3</a>
               </h3>
               <div class="news-item__tags">
                 <span class="news-item__tag"
@@ -713,7 +723,7 @@
               </div>
               <p class="news-item__date">Monday, December 19th</p>
               <h3 class="news-item__title">
-                <a href="#">Throwback night: ticket special</a>
+                <a href="#">4</a>
               </h3>
               <div class="news-item__tags">
                 <span class="news-item__tag"
@@ -837,7 +847,7 @@
               </div>
               <p class="news-item__date">Monday, December 19th</p>
               <h3 class="news-item__title">
-                <a href="#">Throwback night: ticket special</a>
+                <a href="#">5</a>
               </h3>
               <div class="news-item__tags">
                 <span class="news-item__tag"
@@ -940,38 +950,213 @@
     </section>
     <!-- ?END SUBSCRIBE -->
 
+    <!-- //START TEAM roster -->
+    <section class="team">
+      <div id="team" class="container">
+        <h2 class="team__title">Our team</h2>
+        <div class="swiper swiper_team">
+          <div class="swiper-wrapper swiper-wrapper_team">
+            <!-- //START TEAM SLIDE 1  -->
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/curry.avif" alt="Curry" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Stephen Curry</p>
+                  <p class="team-item__number">
+                    #30
+                    <span class="team-item__position">guard</span>
+                  </p>
+
+                  <p class="team-item__roster">starter</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/paul.webp" alt="Paul" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Chris Paul</p>
+                  <p class="team-item__number">
+                    #8 <span class="team-item__position">guard</span>
+                  </p>
+                  <p class="team-item__roster">starter</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/thompson.webp" alt="Thopmson" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Klay Thompson</p>
+                  <p class="team-item__number">
+                    #11 <span class="team-item__position">guard</span>
+                  </p>
+                  <p class="team-item__roster">starter</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/green.webp" alt="Draymond Green" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Draymond Green</p>
+                  <p class="team-item__number">
+                    #23 <span class="team-item__position">forward</span>
+                  </p>
+                  <p class="team-item__roster">starter</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/looney.webp" alt="Looney" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Kevon Looney</p>
+                  <p class="team-item__number">
+                    #5 <span class="team-item__position">center</span>
+                  </p>
+                  <p class="team-item__roster">starter</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/wiggins.webp" alt="Wiggins" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Andrew Wiggins</p>
+                  <p class="team-item__number">
+                    #22 <span class="team-item__position">guard</span>
+                  </p>
+                  <p class="team-item__roster">role</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/payton.avif" alt="Payton" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Gary Payton II</p>
+                  <p class="team-item__number">
+                    #8 <span class="team-item__position">guard</span>
+                  </p>
+                  <p class="team-item__roster">role</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/moody.webp" alt="Moody" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Moses Moody</p>
+                  <p class="team-item__number">
+                    #4 <span class="team-item__position">guard</span>
+                  </p>
+                  <p class="team-item__roster">role</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/kuminga.webp" alt="Kuminga" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Jonathan Kuminga</p>
+                  <p class="team-item__number">
+                    #00 <span class="team-item__position">forward</span>
+                  </p>
+                  <p class="team-item__roster">role</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide swiper-slide_team">
+              <div class="team-item">
+                <div class="team-item__img">
+                  <img src="i/players/lamb.webp" alt="Lamb" />
+                </div>
+                <div class="team-item__content">
+                  <p class="team-item__name">Anthony Lamb</p>
+                  <p class="team-item__number">
+                    #40 <span class="team-item__position">forward</span>
+                  </p>
+                  <p class="team-item__roster">role</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next swiper-button-next_team"></div>
+          <div class="swiper-button-prev swiper-button-prev_team"></div>
+          <div class="swiper-pagination_team"></div>
+        </div>
+      </div>
+    </section>
+    <!-- ?END TEAM roster -->
+
     <!-- //START STATISTIC players -->
     <section>
       <div class="container">
-        <div class="statistic">
+        <div id="statistic" class="statistic">
           <h2 class="statistic__title">
             Team statistic for Regular season 2022-2023
           </h2>
-          <div>
-            <table class="statistic__table">
+          <div id="statistic-team" class="statistic__table">
+            <table>
               <thead>
                 <tr>
-                  <th class="table__players">players</th>
-                  <th title="Games Played" class="table__games">GP</th>
-                  <th title="Minutes Played" class="table__mins">Min</th>
-                  <th title="Points" class="table__points">Pts</th>
-                  <th title="Field Goals Percentage" class="table__two-percent">
+                  <th id="table__players" class="">players</th>
+                  <th id="table__games" title="Games Played" class="">GP</th>
+                  <th id="table__mins" title="Minutes Played" class="">Min</th>
+                  <th id="table__points" title="Points" class="">Pts</th>
+                  <th
+                    id="table__two-percent"
+                    title="Field Goals Percentage"
+                    class=""
+                  >
                     Fg%
                   </th>
                   <th
+                    id="table__three-percent"
                     title="3Points Field Goals Percentage"
-                    class="table__three-percent"
+                    class=""
                   >
                     3P%
                   </th>
-                  <th title="Free Throw Percentage" class="table__free-percent">
+                  <th
+                    id="table__free-percent"
+                    title="Free Throw Percentage"
+                    class=""
+                  >
                     Ft%
                   </th>
-                  <th title="Rebonds" class="table__rebs">Reb</th>
-                  <th title="Assists" class="table__asissts">Ast</th>
-                  <th title="Turnowers" class="table__tornov">Tov</th>
-                  <th title="Steals" class="table__steals">Stl</th>
-                  <th title="Blocks" class="table__blocks">Blk</th>
+                  <th id="table__rebs" title="Rebonds" class="">Reb</th>
+                  <th id="table__asissts" title="Assists" class="">Ast</th>
+                  <th id="table__tornov" title="Turnowers" class="">Tov</th>
+                  <th id="table__steals" title="Steals" class="">Stl</th>
+                  <th id="table__blocks" title="Blocks" class="">Blk</th>
                 </tr>
               </thead>
               <tbody class="js-statistic"></tbody>
@@ -985,7 +1170,7 @@
     <!-- //START PLAYER stat -->
     <section>
       <div class="container">
-        <div class="player-stat">
+        <div id="statistic-player" class="player-stat">
           <h2 class="player-stat__head-title">Teams leaders</h2>
 
           <div class="swiper mySwiper">
@@ -1115,11 +1300,11 @@
     <!-- //START GALLERY -->
     <section>
       <div class="container">
-        <div class="gallery">
+        <div id="media" class="gallery">
           <h2 class="gallery__title">Media Galerry</h2>
           <div class="gallery__tab-nav">
             <button
-              class="gallery__tab-item"
+              class="gallery__tab-item gallery__tab-item_active"
               data-filter="gallery-isotop__item"
             >
               All
@@ -1254,21 +1439,136 @@
     </section>
     <!-- ?END GALLERY -->
 
+    <!-- //START SPONSOR block -->
+    <aside class="sponsors">
+      <div class="container">
+        <div class="sponsors__wrapper">
+          <h2 class="sponsors__title">Our Sponsors and Partners</h2>
+          <div class="sponsors__item">
+            <a
+              href="https://www.nba.com/"
+              class="sponsors__link"
+              target="_blank"
+              ><img src="i/sponsors/nba.png" alt="" class="sponsors__img"
+            /></a>
+          </div>
+          <div class="sponsors__item">
+            <a
+              href="https://www.rakuten.com/"
+              class="sponsors__link"
+              target="_blank"
+              ><img src="i/sponsors/rakuten.webp" alt="" class="sponsors__img"
+            /></a>
+          </div>
+          <div class="sponsors__item">
+            <a
+              href="https://www.chase.com/"
+              class="sponsors__link"
+              target="_blank"
+              ><img src="i/sponsors/chase.webp" alt="" class="sponsors__img"
+            /></a>
+          </div>
+          <div class="sponsors__item">
+            <a
+              href="https://www.ticketmaster.com/"
+              class="sponsors__link"
+              target="_blank"
+              ><img
+                src="i/sponsors/ticketmaster.webp"
+                alt=""
+                class="sponsors__img"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- ?END SPONSOR block -->
+
+    <!-- //START FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__logo">
+            <img src="i/logo.svg" alt="logo" />
+          </div>
+          <div class="footer__contacts">
+            <p class="contacts__adress">
+              1 Warriors Way, San Francisco, CA 94158
+            </p>
+            <a href="tel:+1 888-479-4667" class="contacts__phone"
+              >+1 888-479-4667</a
+            >
+            <a href="mailto: ticketing@warriors.com" class="contacts__email"
+              >ticketing@warriors.com</a
+            >
+          </div>
+
+          <h3 class="footer-nav__title footer-nav__title_center">
+            Quick links
+          </h3>
+
+          <div class="footer-nav">
+            <ul class="footer-nav__list">
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">about club</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">Team</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">Sportpress</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">Media</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">News</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">Shop</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">Pages</a>
+              </li>
+              <li class="footer-nav__item">
+                <a href="" class="footer-nav__link">Contacts</a>
+              </li>
+            </ul>
+          </div>
+          <h3 class="footer-nav__title footer-nav__title_right">
+            Sign up for email alerts
+          </h3>
+          <div class="footer-subscribe">
+            <p>Select topics and stay current with our latest news</p>
+            <form
+              action=""
+              class="footer-subscribe__form"
+              name="subscribe"
+              novalidate
+            >
+              <input
+                type="email"
+                class="footer-subscribe__email"
+                placeholder="Enter your email"
+                novalidate
+              />
+              <input
+                type="submit"
+                class="footer-subscribe__submit"
+                value="Submit"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ?END FOOTER -->
     <!--  JavaScript here -->
     <!-- <script type="module" src="js/app.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <!-- <script src="js/swiper.js"></script> -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/packery-mode.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/script.js"></script>
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
-    ></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> -->
   </body>
 </html>

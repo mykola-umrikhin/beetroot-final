@@ -1,0 +1,54 @@
+.sponsors {
+  margin: rem(40px) 0;
+  background: #1a64b7;
+  background-size: cover;
+  // .sponsors__wrapper
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: rem(20px) 0;
+    background: linear-gradient(
+        rgba(26, 100, 183, 0.6),
+        rgba(26, 100, 183, 0.6)
+      ),
+    url('#{$imagesPath}/sponsors/back.jpg') center
+      top no-repeat;
+    padding-bottom: rem(30px);
+  }
+
+  // .sponsors__title
+
+  &__title {
+    @include respm;
+    @include font($h2Size, 600, $titleFontFamily);
+    padding: rem(30px) 0;
+    color: $secondGold;
+    text-transform: uppercase;
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  // .sponsors__item
+
+  &__item {
+    flex-basis: 22%;
+    text-align: center;
+  }
+
+  // .sponsors__link
+
+  &__link {
+    width: 80%;
+    max-width: 100%;
+  }
+
+  // .sponsors__img
+
+  &__img {
+    width: 60%;
+    height: 30%;
+  }
+}

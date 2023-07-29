@@ -10,8 +10,13 @@ const terser = require('terser');
 
 const jsArr = [
   path.resolve(__dirname, 'src/js/ssm.min.js'),
+  path.resolve(__dirname, 'src/js/jquery-3.3.1.min.js'),
+  path.resolve(__dirname, 'src/js/isotope.pkgd.min.js'),
+  path.resolve(__dirname, 'src/js/packery-mode.pkgd.min.js'),
+  path.resolve(__dirname, 'src/js/imagesloaded.pkgd.min.js'),
   path.resolve(__dirname, 'src/js/getdata.js'),
   path.resolve(__dirname, 'src/js/tabs.js'),
+
   path.resolve(__dirname, 'src/js/swiper.js'),
   path.resolve(__dirname, 'src/js/script.js'),
 ];

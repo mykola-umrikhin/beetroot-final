@@ -6,7 +6,7 @@
 
   @include e(title) {
     flex-basis: 25%;
-    @include font(rem(35px), 600, $titleFontFamily);
+    @include font($h2Size, 600, $titleFontFamily);
     color: $primaryBlue;
     text-transform: uppercase;
     @include respm;
@@ -45,7 +45,7 @@
     }
 
     @include m(active) {
-      border-bottom:  3px solid $secondGold;
+      border-bottom: 3px solid $secondGold;
       opacity: 1;
     }
   }
@@ -99,7 +99,7 @@
 
   @include e(title) {
     @include respm;
-    @include font(rem(30px), 500, $titleFontFamily);
+    @include font($h3Size, 500, $titleFontFamily);
     @include m(flex) {
       font-size: rem(24px);
     }

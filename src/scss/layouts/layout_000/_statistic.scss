@@ -1,24 +1,58 @@
 .statistic {
   margin-top: rem(40px);
   padding-bottom: rem(20px);
+  
   &__title {
     margin: 0;
     padding: rem(20px) 0;
-    @include font(rem(40px), 600, $titleFontFamily);
+    @include font($h2Size, 600, $titleFontFamily);
     color: $primaryBlue;
     text-align: center;
     text-transform: uppercase;
   }
   &__table {
     width: 100%;
-    border-collapse: collapse;
+    overflow-x: auto;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
     th {
       text-transform: uppercase;
       text-align: left;
       border-bottom: 1px solid rgba(172, 172, 172, 0.6);
+      padding: rem(10px) 0;
+      position: relative;
       &:hover {
         cursor: pointer;
       }
+    }
+    th.sort-up {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: $secondGold;
+        top: 0;
+        left: 0;
+      }
+    }
+    th.sort-down {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background: $secondGold;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    tr:hover {
+      background: #e2e2e2;
     }
     td {
       padding: rem(10px) 0;
@@ -32,7 +66,7 @@
   margin-top: rem(40px);
   &__head-title {
     text-align: center;
-    @include font(rem(40px), 600, $titleFontFamily);
+    @include font($h2Size, 600, $titleFontFamily);
     @include respm;
     padding: rem(20px) 0;
     color: $primaryBlue;
@@ -50,7 +84,7 @@
   &__title {
     grid-column: span 2;
     grid-row: 1;
-    @include font(rem(30px), 600, $titleFontFamily);
+    @include font($h3Size, 600, $titleFontFamily);
     @include respm;
   }
   &__stat {

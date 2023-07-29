@@ -7,7 +7,7 @@
 
   &__title {
     flex-basis: 30%;
-    @include font(rem(40px), 600, $titleFontFamily);
+    @include font($h2Size, 600, $titleFontFamily);
     text-transform: uppercase;
     color: $primaryBlue;
     @include respm;
@@ -21,7 +21,7 @@
   }
 
   &__tab-item {
-    @include font(rem(30px), 500, $titleFontFamily);
+    @include font($h3Size, 500, $titleFontFamily);
     text-transform: uppercase;
     position: relative;
     overflow: hidden;

@@ -55,7 +55,7 @@
 }
 
 @mixin font($s, $w: '', $f: $textFontFamily) {
-  font: #{$w} $s #{$f};
+  font: #{$w} #{$s} #{$f};
 }
 
 @mixin respm() {
