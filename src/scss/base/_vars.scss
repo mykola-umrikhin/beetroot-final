@@ -7,10 +7,14 @@ $textFontFamily: 'Rubik', sans-serif;
 $mediumFont: 400;
 $boldFont: 700;
 $h2Size: 40px;
+$h2-mob: 34px;
 $h3Size: 30px;
+$h3-mob: 26px;
 
-$mobilePadding: (12px / $baseFontSize) * 1rem;
+$mobilePadding: (12px / $baseFontSize) * 1.2rem;
 $desktopPadding: 1rem;
+
+
 
 // Paths
 
@@ -21,6 +25,6 @@ $usersFilesPath: '../userfiles/';
 // Colors
 $black: #000000;
 $white: #ffffff;
-$primaryBlue: #1d428a !default;
+$primaryBlue: rgb(29, 66, 138) !default;
 $secondGold: #fdc62b !default;
 $grey: #6d6d6d !default;

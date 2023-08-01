@@ -5,7 +5,7 @@
 
   &__title {
     @include respm;
-    @include font($h2Size, 600, $titleFontFamily);
+    @include font($h2-mob, 600, $titleFontFamily);
     text-transform: uppercase;
     color: $primaryBlue;
     text-align: center;
@@ -15,36 +15,27 @@
 .swiper {
   // .swiper_team
 
-  &_team {
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    
+  &_team_top {
+    display: none;
+  }
+
+  &_team_bottom {
+    display: none;
   }
 }
 .swiper-wrapper {
   // .swiper-wrapper_team
 
-  &_team {
-    margin-top: rem(20px);
-    display: flex;
-    justify-content: space-between;
-    gap: rem(10px);
-    width: 100%;
-    height: 100%;
-  }
 }
 .swiper-slide {
   // .swiper-slide_team
 
-  &_team {
-    flex-basis: calc(20% - 9px);
-    height: calc((100% - 10px) / 2) !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+  &_team_top {
+    
+  }
+
+  &_team_bottom {
+   
   }
 }
 .team-item {
@@ -63,45 +54,40 @@
   // .team-item__content
 
   &__content {
-    position: absolute;
     width: 100%;
-    height: 55%;
-    bottom: -28%;
-    left: 0;
-    background: rgba(29, 66, 138, 0.9);
-    transition: all 0.5s ease-in-out;
+    display: flex;
+    padding: rem(10px) 0;
+    border-radius: 0 0 10px 10px;
+    transition: all 0.3s ease-in-out;
     cursor: default;
-    &:hover {
-      bottom: 0;
-    }
   }
 
   // .team-item__name
 
   &__name {
     @include respm;
-    padding: rem(10px) 0;
-    @include font(rem(20px), 500);
+    padding-left: rem(20px);
+    @include font(rem(24px), 600);
     text-align: center;
-    color: $secondGold;
+    color: $primaryBlue;
   }
 
   // .team-item__number
 
   &__number {
     @include respm;
-    color: $white;
-    font-size: rem(24px);
-    font-weight: 500;
+    font-size: rem(36px);
+    font-weight: 600;
     padding: 0 rem(20px);
+    order: -1;
   }
 
   // .team-item__position
 
   &__position {
     font-size: rem(18px);
-    float: right;
     font-weight: 400;
+    display: block;
   }
 
   // .team-item__roster
@@ -111,21 +97,22 @@
     color: $secondGold;
     font-size: rem(18px);
     text-align: center;
+    display: block;
   }
 }
 .swiper-button {
   // .swiper-button-prev_team
   &-prev_team {
-   //  position: absolute;
-   //  width: 30px;
-   //  //  z-index: 4;
-   //  left: -30px;
+    //  position: absolute;
+    //  width: 30px;
+    //  //  z-index: 4;
+    //  left: -30px;
   }
   &-next_team {
-   //  position: absolute;
-   //  width: 30px;
-   //  //  z-index: 4;
-   //  right: -30px;
+    //  position: absolute;
+    //  width: 30px;
+    //  //  z-index: 4;
+    //  right: -30px;
   }
 }
 
@@ -154,4 +141,8 @@
   &-bulet-active_team {
     background: $secondGold;
   }
+}
+
+.swiper_team-mob {
+  
 }

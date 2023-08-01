@@ -39,18 +39,18 @@ body {
 .icon-cart:before {
   content: '\e93a';
   padding-left: rem(4px);
-  font-size: 1rem;
+  font-size: 1.5rem;
   align-items: center;
 }
 
 .icon-cart:after {
   content: '0';
-  width: rem(10px);
-  height: rem(10px);
+  width: rem(14px);
+  height: rem(14px);
   background: rgb(219, 13, 13);
   border-radius: 50%;
   position: absolute;
-  top: -8px;
+  top: -16px;
   right: -5px;
   text-align: center;
   font-size: rem(10px);

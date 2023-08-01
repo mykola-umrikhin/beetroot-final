@@ -1,27 +1,34 @@
 .subscribe {
   background: $primaryBlue;
   margin-top: rem(20px);
-  padding: rem(40px) 0;
+  padding: rem(20px) 0;
   text-align: center;
 
-  @include e(title) {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
     @include respm;
-    @include font($h2Size, 600, $titleFontFamily);
+    @include font($h2-mob, 600, $titleFontFamily);
     color: $secondGold;
     text-transform: uppercase;
   }
 
-  @include e(email) {
+  &__email {
     margin-top: rem(14px);
     padding: rem(15px) rem(20px);
     background: #e2e2e2;
     color: $black;
     font-size: rem(18px);
-    width: 30%;
+    flex-basis: 70%;
     border-radius: rem(8px);
   }
 
-  @include e(submit) {
+  &__submit {
     margin-top: rem(14px);
     padding: rem(15px) rem(40px);
     background: $secondGold;
@@ -29,14 +36,5 @@
     @include font(rem(20px), 600);
     border-radius: rem(8px);
     text-transform: uppercase;
-    transition: all 0.4s;
-    &:hover {
-      cursor: pointer;
-      transform: translateY(-5%);
-      box-shadow: 0px 8px 10px rgba(253, 198, 43, 0.4);
-      // background: $primaryBlue;
-      // color: $secondGold;
-      // border: 2px solid  $secondGold;
-    }
   }
 }

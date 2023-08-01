@@ -4,10 +4,18 @@ nav {
   position: relative;
 }
 
+.logo-img {
+  // .logo-img_mob
+  &_mob {
+    width: rem(40px);
+    height: rem(40px);
+  }
+}
+
 .top-nav {
   background: $primaryBlue;
-
-  @include e(wrapper) {
+  width: 100%;
+  &__wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -16,99 +24,218 @@ nav {
   }
 
   // //START LEFT TOP nav
+  &__logo-mob {
+    // .top-nav__logo-mob_img
 
-  @include e(left) {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: rem(14px) 0;
-    list-style: none;
-    flex-basis: 20%;
-  }
-  @include e(left-item) {
-    span {
-      color: $white;
-      opacity: 0.6;
+    &_img {
     }
   }
-
-  @include e(left-link) {
-    color: $white;
-    text-decoration: none;
-    text-transform: uppercase;
-    @include font(rem(12px), 300, $textFontFamily);
-    transition: all 0.6s;
-
-    &:hover {
-      color: $secondGold;
-      cursor: pointer;
-    }
+  &__left {
+    display: none;
   }
+
   // ? END LEFT TOP nav
   /* ================== */
   // //START RIGHT TOP nav
 
-  @include e(right) {
+  &__right {
     display: flex;
-    flex-basis: 35%;
     align-items: center;
+    flex-basis: 100%;
   }
 
-  @include e(social) {
+  &__social {
+    display: none;
+  }
+
+  &__right-nav {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    flex-basis: 40%;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    justify-items: flex-end;
+    flex-basis: 100%;
   }
 
-  @include e(icon) {
-    width: 20px;
-    height: 20px;
-    fill: $white;
-    opacity: 0.8;
-  }
-
-  &__social-link {
-    transition: all 0.6s;
-    &:hover {
-      .top-nav__icon {
-        fill: $secondGold;
+  &__right-item {
+    &:first-of-type {
+      margin-left: auto;
+      span {
+        font-size: 0;
       }
     }
-  }
-
-  @include e(right-nav) {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    flex-basis: 60%;
-    justify-items: flex-end;
-  }
-
-  @include e(right-item) {
-    justify-self: flex-end;
-    span {
-      color: $white;
-      opacity: 0.6;
+    &_hide {
+      display: none;
     }
   }
 
-  @include e(right-link) {
+  &__right-link {
     color: $white;
     text-decoration: none;
     @include font(rem(12px));
     text-transform: uppercase;
     transition: all 0.6s;
-
-    &:hover {
-      color: $secondGold;
-      cursor: pointer;
-    }
   }
 }
+
+// //START MOBILE Menu
+/** ---------------------------------------------------------------------------
+ * Menu button.
+ * ------------------------------------------------------------------------- */
+/*#region*/
+.menu-button {
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+  width: 30px;
+  height: 20px;
+
+  position: relative;
+  margin-left: rem(20px);
+}
+.menu-button.in-mobile {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  span {
+    background: $primaryBlue;
+  }
+}
+
+.menu-button span {
+  position: absolute;
+  height: 4px;
+  border-radius: 10px;
+  width: 100%;
+  background: $white;
+  top: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.menu-button span:nth-child(1) {
+  top: 0;
+}
+
+.menu-button span:nth-child(2),
+.menu-button span:nth-child(3) {
+  top: 10px;
+}
+
+.menu-button span:nth-child(4) {
+  top: 20px;
+}
+
+.menu-button.active span:nth-child(1),
+.menu-button.active span:nth-child(4) {
+  opacity: 0;
+}
+
+.menu-button.active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.menu-button.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+/*#endregion*/
+
+/** ---------------------------------------------------------------------------
+* Mobile menu 
+* ------------------------------------------------------------------------- */
+
+/*#region*/
+
+/* Dark overlay.  */
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 99998;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(29, 66, 138, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.dark-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile menu. */
+.mobile-menu {
+  background-color: $secondGold;
+  padding: 6rem 0 2rem;
+  position: fixed;
+  width: 18rem;
+  top: 0;
+  right: -100%;
+  transition: right 0.3s;
+  z-index: 99999;
+  height: 100%;
+  overflow: scroll;
+}
+
+.mobile-menu.visible {
+  right: 0;
+}
+
+.mobile-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-navigation a {
+  display: block;
+  padding: 1rem;
+  color: $primaryBlue;
+  @include font(rem(18px), '', $textFontFamily);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.mobile-navigation a.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-navigation li {
+  position: relative;
+}
+
+/* 1st level. */
+.mobile-navigation > ul > li > a {
+  font-weight: bold;
+}
+
+/* Lower levels. */
+.mobile-navigation li ul {
+  padding-left: 2rem;
+  display: none;
+}
+
+/* Drop-down arrows. */
+.mobile-navigation li.has-submenu:after {
+  content: '';
+  position: absolute;
+  top: 1.6rem;
+  width: 0;
+  height: 0;
+}
+
+.mobile-navigation li.has-submenu:after {
+  right: 1rem;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(29, 66, 138, 0.5);
+}
+
+.mobile-navigation li.has-submenu.opened:after {
+  border-bottom: 5px solid rgba(29, 66, 138, 0.5);
+  border-top: none;
+}
+/*#endregion*/
+// ?END MOBILE Menu
 
 // ? END RIGHT TOP nav
