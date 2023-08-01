@@ -1,0 +1,104 @@
+html {
+  font-size: $baseFontSize;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $textFontFamily;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 $desktopPadding;
+}
+.hidden {
+  display: none;
+}
+// ! ICON-MOONE
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  // position: relative;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-cart {
+  position: relative !important;
+}
+.icon-cart:before {
+  content: '\e93a';
+  padding-left: rem(4px);
+  font-size: 1rem;
+  align-items: center;
+}
+
+.icon-cart:after {
+  content: '0';
+  width: rem(10px);
+  height: rem(10px);
+  background: rgb(219, 13, 13);
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  text-align: center;
+  font-size: rem(10px);
+}
+.icon-dribbble:before {
+  content: '\eaa7';
+  padding-right: rem(4px);
+}
+
+.icon-arrow-right2:before {
+  content: '\ea3c';
+  vertical-align: baseline;
+  display: inline-block;
+  transform: translateY(1px);
+  font-size: rem(20px);
+}
+.icon-folder:before {
+  content: '\e92f';
+  margin-right: rem(10px);
+}
+.icon-camera:before {
+  content: '\e90f';
+}
+
+.icon-bubble2:before {
+  content: '\e96e';
+  margin-right: rem(10px);
+}
+
+.icon-file-picture:before {
+  content: '\e927';
+  position: absolute !important;
+  left: rem(20px);
+  top: rem(20px);
+  z-index: 4;
+  color: $secondGold;
+  font-size: rem(20px);
+  background: $primaryBlue;
+  border-top-right-radius: 10px;
+}
+.icon-file-video:before {
+  content: '\e92a';
+  position: absolute !important;
+  left: rem(20px);
+  top: rem(20px);
+  z-index: 4;
+  color: $secondGold;
+  font-size: rem(20px);
+  background: $primaryBlue;
+  border-top-right-radius: 10px;
+}
