@@ -26,10 +26,6 @@ newsTabTitle.forEach((item) =>
     )
   )
 );
-// document
-//   .querySelector('[data-tab="main-tab-1"]')
-//   .classList.add('active-main-tab');
-// document.querySelector('#main-tab-1').classList.remove('hidden');
 
 ////Function for tabs
 function onTabClick(

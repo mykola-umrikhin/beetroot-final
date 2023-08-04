@@ -1,0 +1,33 @@
+.active-main-tab {
+  background: $secondGold !important;
+}
+.main {
+  &-tab__item {
+    width: rem(14px);
+    height: rem(14px);
+    border-radius: 50%;
+    background: $primaryBlue;
+    transition: 0.1s;
+  }
+  .container {
+    grid-template-rows: 2fr 2.5fr 0.7fr;
+  }
+
+  &__title {
+    width: 70%;
+    margin-top: rem(60px);
+  }
+  &__text {
+    width: calc(70%);
+
+    p {
+      @include font(rem(18px));
+      line-height: rem(28px);
+      -webkit-line-clamp: 3;
+    }
+  }
+  &__button {
+    padding: rem(12px) rem(20px);
+    @include font(rem(18px), 600, $titleFontFamily);
+  }
+}

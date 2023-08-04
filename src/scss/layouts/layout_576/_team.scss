@@ -1,0 +1,31 @@
+.team {
+  margin-top: rem(40px);
+}
+
+.team-item {
+  // .team-item__content
+  &__content {
+    padding: rem(20px) 0;
+  }
+
+  // .team-item__name
+  &__name {
+    margin-left: auto;
+    @include font(rem(28px), 600);
+  }
+
+  // .team-item__number
+  &__number {
+    font-size: rem(44px);
+  }
+
+  // .team-item__position
+  &__position {
+    font-size: rem(22px);
+  }
+
+  // .team-item__roster
+  &__roster {
+    font-size: rem(22px);
+  }
+}

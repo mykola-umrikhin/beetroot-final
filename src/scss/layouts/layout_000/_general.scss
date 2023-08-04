@@ -47,7 +47,8 @@ body {
   content: '0';
   width: rem(14px);
   height: rem(14px);
-  background: rgb(219, 13, 13);
+  background: $secondGold;
+  color: $primaryBlue;
   border-radius: 50%;
   position: absolute;
   top: -16px;

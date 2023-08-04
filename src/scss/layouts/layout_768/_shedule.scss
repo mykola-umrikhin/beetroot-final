@@ -1,0 +1,37 @@
+////START Last Result
+.last-result {
+  margin-top: rem(80px);
+
+  &__result-wrapper {
+    max-width: rem(640px);
+  }
+}
+//? END Last Result
+
+////START Shedule section
+.shedule {
+  &__logo-team {
+    img {
+      width: rem(160px) !important;
+      height: rem(160px) !important;
+    }
+  }
+
+ 
+
+  &__home {
+    @include font(rem(60px), 500, $titleFontFamily);
+    align-self: center;
+  }
+
+  &__league {
+    margin: rem(4px) 0;
+  }
+
+}
+//? END Shedule section
+.swiperShedule {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}

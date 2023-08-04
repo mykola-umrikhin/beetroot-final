@@ -1,0 +1,63 @@
+////START Last Result
+.last-result {
+  margin-top: rem(80px);
+
+  &__result-wrapper {
+    grid-template-columns: 1.5fr 2fr 1.5fr;
+    max-width: rem(520px);
+  }
+
+  &__logo-team {
+    margin-top: 10%;
+    img {
+      width: rem(120px);
+      height: rem(120px);
+    }
+  }
+
+  &__teame-name {
+    display: inline;
+    @include font(rem(36px), 500, $titleFontFamily);
+    color: $primaryBlue;
+  }
+
+  &__score {
+    width: rem(80px);
+    height: rem(80px);
+    @include font(rem(48px), 600, $titleFontFamily);
+    display: flex;
+  }
+  &__home {
+    align-self: center;
+    @include font(rem(80px), 500, $titleFontFamily);
+  }
+  &__date {
+    @include font(rem(28px), 500, $titleFontFamily);
+  }
+}
+//? END Last Result
+
+////START Shedule section
+.shedule {
+  &__logo-team {
+    img {
+      width: rem(160px) !important;
+      height: rem(160px) !important;
+    }
+  }
+
+
+
+  &__home {
+    @include font(rem(60px), 500, $titleFontFamily);
+    align-self: center;
+  }
+
+  &__league {
+    margin: rem(4px) 0;
+  }
+
+  &__date {
+  }
+}
+//? END Shedule section

@@ -1,0 +1,33 @@
+.subscribe {
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: rem(16px);
+    margin: rem(20px) 0 rem(30px);
+  }
+
+  &__title {
+    @include respm;
+    @include font($h2Size, 600, $titleFontFamily);
+    color: $secondGold;
+    text-transform: uppercase;
+  }
+
+  &__email {
+    padding: rem(15px) rem(20px);
+    flex-basis: rem(400px);
+    min-width: auto;
+    margin: 0;
+    // border-radius: rem(8px);
+  }
+
+  &__submit {
+    padding: rem(15px) rem(30px);
+    margin: 0;
+    @include font(rem(15px), 600);
+    flex-basis: rem(200px);
+    min-width: auto;
+  }
+}

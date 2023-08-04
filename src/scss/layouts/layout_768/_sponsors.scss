@@ -1,0 +1,10 @@
+.sponsors {
+  &__wrapper {
+    padding: rem(20px);
+  }
+
+  // .sponsors__item
+  &__item {
+    flex-basis: 35%;
+  }
+}

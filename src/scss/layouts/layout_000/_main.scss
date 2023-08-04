@@ -94,7 +94,7 @@ main {
     width: 100%;
     @include respm;
     // padding-left: rem(10px);
-    @include font($h2Size, 600, $titleFontFamily);
+    @include font($h2-mob, 600, $titleFontFamily);
     text-transform: uppercase;
     color: $white;
   }
@@ -103,7 +103,7 @@ main {
     margin: 0;
     padding: rem(20px) 0;
     @include font(rem(18px));
-    line-height: rem(36px);
+    line-height: rem(28px);
     width: calc(99%);
     // height: cacl(99%);
     color: $white;
@@ -126,7 +126,7 @@ main {
     text-transform: uppercase;
     text-decoration: none;
     color: $primaryBlue;
-    @include font($h3-mob, 600, $titleFontFamily);
+    @include font(rem(18px), 600, $titleFontFamily);
     // margin-top: rem(36px);
     border-radius: rem(4px);
     i {

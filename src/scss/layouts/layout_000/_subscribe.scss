@@ -24,17 +24,20 @@
     background: #e2e2e2;
     color: $black;
     font-size: rem(18px);
-    flex-basis: 70%;
+    // flex-basis: 70%;
+    min-width: 70%;
     border-radius: rem(8px);
   }
 
   &__submit {
-    margin-top: rem(14px);
     padding: rem(15px) rem(40px);
+    margin: rem(14px) 0;
     background: $secondGold;
-    color: $primaryBlue;
-    @include font(rem(20px), 600);
     border-radius: rem(8px);
+    color: $primaryBlue;
+    @include font(rem(15px), 600);
     text-transform: uppercase;
+    // flex-basis: 70%;
+    min-width: 70%;
   }
 }

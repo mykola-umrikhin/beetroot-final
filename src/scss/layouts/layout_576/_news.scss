@@ -1,0 +1,32 @@
+.news {
+  margin-top: rem(20px);
+
+  &__tab-list {
+    gap: rem(10px) rem(10px);
+  }
+
+  &__tab-item {
+    @include font(rem(26px), 500, $titleFontFamily);
+  }
+
+  &__content {
+    margin-top: rem(24px);
+  }
+}
+
+.news-item {
+  grid-template-rows: 1.5fr  0.8fr ;
+
+  &__img {
+    height: rem(200px);
+  }
+  &__date {
+    font-size: rem(14px);
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 rem(10px);
+  }
+}

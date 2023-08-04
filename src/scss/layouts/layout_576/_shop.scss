@@ -1,0 +1,15 @@
+.shop {
+  &__title {
+    @include font($h2-mob, 600, $titleFontFamily);
+  }
+
+  &__wrapper {
+    gap: rem(20px);
+  }
+
+  &__item {
+    width: calc(50% - 20px);
+    grid-template-rows: 1fr .6fr 0.2fr 0.2fr;
+    box-shadow: 0 rem(10px) rem(10px) rem(5px) rgba(0, 0, 0, 0.3);
+  }
+}

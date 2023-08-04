@@ -1,0 +1,11 @@
+.team-item {
+  // .team-item__content
+  &__content {
+    padding: rem(20px) rem(10px);
+  }
+
+  // .team-item__name
+  &__name {
+    padding-left: rem(50px);
+  }
+}

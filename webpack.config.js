@@ -14,8 +14,10 @@ const jsArr = [
   path.resolve(__dirname, 'src/js/isotope.pkgd.min.js'),
   path.resolve(__dirname, 'src/js/packery-mode.pkgd.min.js'),
   path.resolve(__dirname, 'src/js/imagesloaded.pkgd.min.js'),
+  path.resolve(__dirname, 'src/js/data.js'),
   path.resolve(__dirname, 'src/js/getdata.js'),
   path.resolve(__dirname, 'src/js/tabs.js'),
+  path.resolve(__dirname, 'src/js/sheduleCount.js'),
 
   path.resolve(__dirname, 'src/js/swiper.js'),
   path.resolve(__dirname, 'src/js/script.js'),

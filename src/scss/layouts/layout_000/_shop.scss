@@ -1,0 +1,206 @@
+.shop {
+  margin: rem(40px) 0;
+
+  &__title {
+    @include font($h2-mob, 600, $titleFontFamily);
+    text-align: center;
+    text-transform: uppercase;
+    color: $primaryBlue;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    width: 100%;
+    max-width: rem(460px);
+    // display: flex;
+    display: grid;
+    grid-template-rows: 2fr 1fr 0.2fr 0.2fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    padding: rem(10px);
+  }
+  &__item-img {
+    width: 80%;
+    max-width: 100%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__item-title {
+    @include font(rem(18px), 500);
+    @include respm;
+    margin: rem(8px) 0;
+    align-self: flex-start;
+  }
+  &__item-price {
+    @include font(rem(20px));
+    @include respm;
+    margin: rem(8px) 0;
+    flex-basis: 100%;
+    &_big {
+      @include font(rem(24px), 600);
+      color: $primaryBlue;
+    }
+  }
+  &__item-cart {
+    @include font(rem(20px), 600);
+    @include respm;
+    margin: rem(8px) 0;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-left: rem(8px);
+    }
+  }
+}
+
+.cart {
+  // position: absolute;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+  // width: 100%;
+  // height: 100svh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__wrapper {
+    width: 90%;
+    height: 90%;
+    max-width: rem(600px);
+    background: $white;
+    border-radius: rem(8px);
+    padding: rem(15px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto;
+  }
+
+  &__close-btn {
+    margin-left: auto;
+  }
+
+  &__title {
+    flex-basis: 100%;
+    @include font($h3-mob, 600, $titleFontFamily);
+    text-transform: uppercase;
+    color: $primaryBlue;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-basis: 100%;
+  }
+
+  &__item {
+    display: flex;
+    padding: rem(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    gap: rem(12px);
+  }
+
+  &__item-del {
+    order: 1;
+  }
+
+  &__item-img {
+    width: 30%;
+    height: 30%;
+  }
+  &__item-title {
+    font-weight: 500;
+  }
+  &__item-price {
+    @include font(rem(20px), 600);
+    color: $primaryBlue;
+  }
+
+  &__price {
+    @include font(rem(18px), 500);
+    span:last-of-type {
+      font-size: rem(20px);
+      color: $primaryBlue;
+    }
+  }
+
+  &__order {
+    padding: rem(14px) rem(28px);
+    text-transform: uppercase;
+    @include font(1rem, 500, $textFontFamily);
+    border-radius: rem(8px);
+    background: $secondGold;
+    color: $primaryBlue;
+  }
+
+  &__empty {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__empty-title {
+    @include font(rem(18px), 500);
+  }
+
+  &__empty-img {
+    height: 70%;
+  }
+  &__empty-btn-close {
+    width: 45%;
+    padding: rem(14px) rem(28px);
+    @include font(1rem, 500, $textFontFamily);
+    text-transform: uppercase;
+    border-radius: rem(8px);
+    background: $primaryBlue;
+    color: $secondGold;
+  }
+}
+
+.cart-icon {
+  position: fixed;
+  right: rem(10px);
+  bottom: rem(20px);
+  z-index: 9999;
+  width: rem(40px);
+  height: rem(40px);
+  border-radius: rem(8px);
+  background: $white;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  padding-top: rem(6px);
+  &__img::after {
+    content: '';
+    min-width: 0;
+  }
+  &__img {
+    position: relative;
+    color: $primaryBlue;
+  }
+  &__count {
+    position: absolute;
+    color: $primaryBlue;
+    top: rem(-3px);
+    right: rem(6px);
+    font-size: rem(12px);
+  }
+}

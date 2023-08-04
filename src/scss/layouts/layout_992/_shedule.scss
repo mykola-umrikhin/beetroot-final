@@ -1,0 +1,127 @@
+////START Last Result
+.last-result {
+  margin-top: rem(50px);
+
+  &__result-wrapper {
+    padding: rem(10px);
+    margin-top: rem(10px);
+    box-shadow: 0 rem(10px) rem(10px) rem(5px) rgba(0, 0, 0, 0.3);
+    max-width: rem(640px);
+  }
+  &__title {
+    font-size: $h2Size;
+  }
+}
+//? END Last Result
+
+////START Shedule section
+.shedule {
+  &__logo-team {
+    img {
+      width: rem(160px) !important;
+      height: rem(160px) !important;
+    }
+  }
+}
+//? END Shedule section
+
+.shedule {
+  width: 100%;
+  margin-top: rem(20px);
+  background: $primaryBlue;
+  padding: rem(20px) 0;
+
+  &__title {
+    text-align: center;
+    @include respm;
+    @include font($h2Size, 600, $titleFontFamily);
+    text-transform: uppercase;
+    color: $secondGold;
+  }
+
+  &__logo-team {
+    width: 100%;
+    max-width: 100%;
+    img {
+      width: rem(140px) !important;
+      height: rem(140px) !important;
+      object-fit: contain !important;
+    }
+  }
+
+  &__teame-name {
+    @include font(rem(32px), 500, $titleFontFamily);
+  }
+
+  &__home {
+    @include font(rem(50px), 500, $titleFontFamily);
+    @include respm;
+    padding-bottom: 30%;
+    text-align: center;
+    align-self: flex-end;
+  }
+
+  &__league {
+    @include font(rem(28px), 500, $titleFontFamily);
+  }
+
+  &__date {
+    @include font(rem(24px), 500, $titleFontFamily);
+  }
+}
+//? END Shedule section
+
+// //START SWIPER
+.swiperShedule {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper_shedule {
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-slide_shedule {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: rem(10px) !important;
+}
+
+.swiper-slide_shedule img {
+  display: inline-block !important;
+  text-align: center;
+  // width: 100% !important;
+  // height: auto !important;
+  object-fit: cover;
+}
+
+.swiper-pagination_shedule {
+  position: static !important;
+  // height: rem(30px);
+  display: flex;
+  gap: rem(10px);
+  margin-top: rem(15px);
+  justify-content: center;
+}
+.swiper-pagination-bulet_shedule {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px !important ;
+  font-size: 40px !important;
+  color: yellow !important;
+  opacity: 1;
+  background: transparent;
+  border: 3px solid $white;
+}
+
+.swiper-pagination-bulet-active_shedule {
+  color: #fff;
+  background: transparent;
+  border: 3px solid $secondGold;
+}
+
+.swiper-pagination_shedule {
+}

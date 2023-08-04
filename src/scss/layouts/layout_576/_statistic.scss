@@ -1,0 +1,12 @@
+.player-stat {
+  margin-top: rem(20px);
+  max-width: 80%;
+  margin: 0 auto;
+
+  &__img {
+    width: 60%;
+    &_first {
+      width: 75%;
+    }
+  }
+}

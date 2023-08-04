@@ -11,6 +11,7 @@
     text-transform: uppercase;
     color: $primaryBlue;
     @include respm;
+    text-align: center;
   }
 
   &__tab-nav {

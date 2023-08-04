@@ -1,0 +1,10 @@
+.subscribe {
+  &__email {
+    padding: rem(18px) rem(20px);
+  }
+  &__submit {
+    padding: rem(18px) rem(40px);
+    @include font(rem(18px), 600);
+    min-width: 40%;
+  }
+}

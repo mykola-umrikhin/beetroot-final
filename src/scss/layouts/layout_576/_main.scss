@@ -1,0 +1,30 @@
+
+// //START TAB navigation
+
+
+// ?END TAB navigation
+
+.main {
+  
+
+  &__title {
+    width: 70%;
+    margin-top: rem(30px);
+  }
+  &__text {
+    
+    width: calc(70%);
+
+
+    p {
+      -webkit-line-clamp: 3;
+
+    }
+  }
+
+  &__button {
+   
+    @include font(rem(18px), 600, $titleFontFamily);
+    
+  }
+}

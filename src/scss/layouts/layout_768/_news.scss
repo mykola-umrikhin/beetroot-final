@@ -1,0 +1,22 @@
+.news {
+  margin-top: rem(40px);
+
+  &__tab-list {
+    margin-top: rem(20px);
+  }
+}
+
+.news-item {
+  &__img {
+    height: rem(240px);
+  }
+  &__date {
+    font-size: rem(14px);
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 rem(10px);
+  }
+}

@@ -18,11 +18,10 @@ footer {
   &__logo {
     grid-column: 1;
     grid-row: 1;
-    width: 150px;
+    width: 100px;
     max-width: 100%;
     img {
-      width: 150px;
-      height: 150px;
+      width: 100%;
       max-width: 100%;
     }
   }
@@ -52,7 +51,7 @@ footer {
     margin-right: rem(10px);
     padding-bottom: rem(14px);
     color: $white;
-    @include font(rem(18px));
+    @include font(rem(16px));
     transition: 0.4s;
     
   }
@@ -62,7 +61,7 @@ footer {
   &__email {
     display: block;
     color: $white;
-    @include font(rem(18px));
+    @include font(rem(16px));
     transition: 0.4s;
   }
 }

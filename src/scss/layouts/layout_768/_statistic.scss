@@ -1,0 +1,29 @@
+.statistic {
+  margin-top: rem(40px);
+  padding-bottom: rem(20px);
+
+  &__title {
+    margin-bottom: rem(16px);
+  }
+}
+
+.player-stat {
+  margin-top: rem(20px);
+  
+
+  &__img {
+    width: 45%;
+    height: 100%;
+    &_first {
+      width: 55%;
+    }
+  }
+}
+
+// //START SWIPER
+
+.swiper-pagination-bullet {
+  @include font(rem(24px), 500, $titleFontFamily);
+}
+
+// ?END SWIPER

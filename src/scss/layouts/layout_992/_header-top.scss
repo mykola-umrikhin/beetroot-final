@@ -1,0 +1,116 @@
+.top-nav {
+  background: $primaryBlue;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // //START LEFT TOP nav
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: rem(14px) 0;
+    list-style: none;
+    flex-basis: 22%;
+  }
+  &__left-item {
+    span {
+      color: $white;
+      opacity: 0.6;
+    }
+  }
+
+  &__left-link {
+    color: $white;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include font(rem(12px), 300, $textFontFamily);
+    transition: all 0.6s;
+
+    &:hover {
+      color: $secondGold;
+      cursor: pointer;
+    }
+  }
+  // ? END LEFT TOP nav
+  /* ================== */
+  // //START RIGHT TOP nav
+
+  &__right {
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+  }
+
+  &__social {
+    flex-basis: 40%;
+  }
+
+  &__icon {
+  }
+
+  &__social-link {
+    transition: all 0.6s;
+    &:hover {
+      .top-nav__icon {
+        fill: $secondGold;
+      }
+    }
+  }
+
+  &__right-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: rem(14px);
+    list-style: none;
+    flex-basis: 60%;
+    justify-items: flex-end;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  &__right-item {
+    justify-self: flex-end;
+    &:first-of-type {
+      margin-left: 0;
+    }
+    span {
+      color: $white;
+      opacity: 0.6;
+    }
+
+    &_hide {
+      display: block;
+    }
+  }
+
+  &__right-link {
+    color: $white;
+    text-decoration: none;
+    @include font(rem(12px));
+    text-transform: uppercase;
+    transition: all 0.6s;
+
+    &:hover {
+      color: $secondGold;
+      cursor: pointer;
+    }
+  }
+}
+.dark-overlay {
+  display: none;
+}
+.mobile-menu {
+  display: none;
+}
+.menu-button {
+  display: none;
+}
+
+// ? END RIGHT TOP nav

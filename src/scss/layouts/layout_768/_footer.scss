@@ -1,0 +1,60 @@
+.footer {
+  // .footer__wrapper
+  // &__wrapper {
+  //   grid-template-columns: repeat(2, 1fr);
+  //   gap: rem(20px);
+  //   // grid-template-rows: 0.5fr 1fr;
+  // }
+
+  // .footer__logo
+
+  &__logo {
+    width: rem(120px);
+  }
+  &__contacts {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: flex-start;
+  }
+}
+
+.footer-nav {
+  grid-column: 2;
+  grid-row: 2;
+  &__title_center {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: last baseline;
+  }
+  &__title_right {
+    margin-top: rem(10px);
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    text-align: start;
+  }
+}
+.footer-subscribe {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+  p {
+    text-align: start;
+  }
+
+  &__form {
+    flex-direction: row;
+    gap: rem(20px);
+    justify-content: flex-start;
+  }
+  // .footer-subscribe__email
+  &__email {
+    flex-basis: 60%;
+    margin: 0;
+  }
+
+  // .footer-subscribe__submit
+  &__submit {
+    margin: 0;
+    min-width: auto;
+    flex-basis: 30%;
+  }
+}

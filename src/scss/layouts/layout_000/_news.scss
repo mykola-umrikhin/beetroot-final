@@ -2,20 +2,18 @@
   margin-top: rem(20px);
 
   &__title {
+    text-align: center;
     @include font($h2-mob, 600, $titleFontFamily);
     color: $primaryBlue;
     text-transform: uppercase;
     @include respm;
   }
 
-
-
   &__tab-list {
     @include respm;
-    
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: rem(10px) rem(20px);
   }
@@ -24,16 +22,6 @@
     @include font(rem(22px), 500, $titleFontFamily);
     position: relative;
     overflow: hidden;
-
-    &::after {
-      content: '';
-      width: 100%;
-      height: 3px;
-      background: $secondGold;
-      position: absolute;
-      bottom: -3px;
-      right: 100%;
-    }
 
     &_active {
       border-bottom: 3px solid $secondGold;
@@ -51,14 +39,16 @@
 
 .news-item {
   display: grid;
-  grid-template-rows: 1.5fr .3fr 1fr .3fr;
+  grid-template-rows: 1fr 1fr;
   &_5 {
     display: none;
   }
 
   &__img {
+    width: 100%;
     max-width: 100%;
-    height: rem(200px);
+    height: 100%;
+    // height: rem(120px);
     img {
       max-width: 100%;
       height: 100%;
@@ -66,9 +56,14 @@
       object-fit: cover;
       object-position: center;
     }
-
+  }
+  &__text {
+    display: grid;
+    grid-template-rows: 0.3fr 1fr 0.2fr;
   }
   &__date {
+    grid-row: 1;
+    flex-basis: 100%;
     @include respm;
     margin: rem(14px) 0;
     font-size: rem(12px);
@@ -77,8 +72,10 @@
   }
 
   &__title {
+    grid-row: 2;
     @include respm;
-    @include font(rem(24px), 600, $titleFontFamily);
+    @include font(rem(24px), 500, $titleFontFamily);
+    height: 100%;
     a {
       text-decoration: none;
       text-transform: uppercase;
@@ -87,11 +84,15 @@
   }
 
   &__tags {
+    grid-row: 3;
+    margin-top: rem(16px);
     display: flex;
-    gap: rem(40px);
+    flex-wrap: nowrap;
+    gap: rem(30px);
   }
 
   &__tag {
+    flex-basis: 30%;
     a {
       color: $grey;
       text-decoration: none;
@@ -100,13 +101,13 @@
   }
 
   &__comments {
+    flex-basis: 20%;
     a {
       color: $grey;
       text-decoration: none;
       @include font(rem(14px));
     }
   }
-
 }
 
 .hidden {
