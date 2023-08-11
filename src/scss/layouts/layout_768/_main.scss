@@ -21,9 +21,9 @@
     width: calc(70%);
 
     p {
-      @include font(rem(18px));
-      line-height: rem(28px);
-      -webkit-line-clamp: 3;
+      @include font(rem(24px));
+      line-height: rem(34px);
+      -webkit-line-clamp: 4;
     }
   }
   &__button {

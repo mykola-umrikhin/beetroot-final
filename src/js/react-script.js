@@ -2,9 +2,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function ProductCard({ id, title, price, imgUrl, onAddCart, addCart }) {
   const [isAdd, setIsAdd] = React.useState(addCart);
-React.useEffect(() => {
-  setIsAdd(addCart)
-}, [addCart]);
+  React.useEffect(() => {
+    setIsAdd(addCart);
+  }, [addCart]);
   return (
     <div className="shop__item">
       <img src={imgUrl} alt="" className="shop__item-img" />
@@ -17,9 +17,11 @@ React.useEffect(() => {
       <p className="shop__item-cart">
         Add to cart:
         <img
-          src={!isAdd ? '/i/shop/btn-plus.svg' : '/i/shop/btn-checked.svg'}
+          style={{ width: '32px', height: '32px', cursor: 'pointer' }}
+          src={
+            !isAdd ? '/i/shop/add-to-cart-3046.svg' : '/i/shop/btn-checked.svg'
+          }
           alt=""
-          className=""
           onClick={() => {
             setIsAdd(!isAdd);
             onAddCart({ title, imgUrl, price, id });
@@ -113,14 +115,18 @@ function App() {
 
   React.useEffect(() => {
     async function fetchData() {
-      const response = await fetch(
-        'https://633857b2937ea77bfdbe8b5e.mockapi.io/sneakers'
-      );
-      const shopItems = await response.json();
-      setItems(shopItems);
+      try {
+        const response = await fetch(
+          'https://633857b2937ea77bfdbe8b5e.mockapi.io/sneakers'
+        );
+        const shopItems = await response.json();
+        setItems(shopItems);
+      } catch (err) {
+        console.log(err);
+      }
     }
     fetchData();
-  }, [cartItems]);
+  }, []);
 
   React.useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
@@ -139,7 +145,7 @@ function App() {
   };
 
   return (
-    <div className="">
+    <div id="shop">
       <h2 className="shop__title">Shop</h2>
       <div className="shop__wrapper">
         <CartIcon data={cartItems} openCart={() => setCartOpened(true)} />

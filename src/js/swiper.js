@@ -1,6 +1,8 @@
 var swiper = new Swiper('.swiper_player', {
   pagination: {
     el: '.swiper-pagination_player',
+    bulletClass: 'swiper-pagination-bulet_player',
+    bulletActiveClass: 'swiper-pagination-bulet-active_player',
     clickable: true,
     renderBullet: function (index, className) {
       const arr = ['Points', 'Rebounds', 'Assists', 'Steals'];
@@ -31,10 +33,6 @@ var swiperShedule = new Swiper('.swiperShedule', {
       slidesPerView: 2,
       spaceBetween: 40,
     },
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
     1200: {
       slidesPerView: 3,
       spaceBetween: 30,
@@ -46,7 +44,6 @@ var swiperTeamMob = new Swiper('.swiper_team-mob', {
   slidesPerView: 1,
   slidesPerGroup: 1,
   spaceBetween: 10,
-  // loop: true,
 
   navigation: {
     nextEl: '.swiper-button-next',
@@ -57,18 +54,11 @@ var swiperTeamMob = new Swiper('.swiper_team-mob', {
     dynamicBullets: true,
     clickable: true,
     
-    // bulletClass: 'swiper-pagination-bulet_team-mob',
-    // bulletActiveClass: 'swiper-pagination-bulet-active_team-mob',
-    // modifierClass: '-team',
-    // renderBullet: function (index, className) {
-    //   return '<span class="' + className + '">' + '</span>';
-    // },
   },
   breakpoints: {
    640: {
       slidesPerView: 2,
       slidesPerGroup: 2,
-      // spaceBetween: 20,
     },
 
     1024: {

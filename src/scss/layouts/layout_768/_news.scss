@@ -7,6 +7,11 @@
 }
 
 .news-item {
+  grid-template-rows: 1fr .7fr;
+  &__text {
+    display: grid;
+    grid-template-rows: 0.2fr 0.8fr 0.2fr;
+  }
   &__img {
     height: rem(240px);
   }

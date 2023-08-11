@@ -10,16 +10,23 @@
   }
 
   &__content {
+    max-width: 100%;
     margin-top: rem(24px);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 .news-item {
-  grid-template-rows: 1.5fr  0.8fr ;
-
+  grid-template-rows: 1fr 0.7fr;
   &__img {
     height: rem(200px);
   }
+
+  &__text {
+    display: grid;
+    grid-template-rows: 0.2fr 0.8fr 0.2fr;
+  }
+
   &__date {
     font-size: rem(14px);
   }

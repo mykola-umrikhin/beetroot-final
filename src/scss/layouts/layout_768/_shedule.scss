@@ -10,14 +10,20 @@
 
 ////START Shedule section
 .shedule {
+  &__game {
+    grid-template-columns: 1fr auto 1fr;
+  }
   &__logo-team {
+    grid-template-rows: 1fr 2fr;
+    height: 100%;
+  }
+  &__logo-img {
     img {
-      width: rem(160px) !important;
-      height: rem(160px) !important;
+      width: rem(150px) !important;
+      height: rem(150px) !important;
+      object-fit: cover;
     }
   }
-
- 
 
   &__home {
     @include font(rem(60px), 500, $titleFontFamily);
@@ -27,7 +33,6 @@
   &__league {
     margin: rem(4px) 0;
   }
-
 }
 //? END Shedule section
 .swiperShedule {

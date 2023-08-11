@@ -39,14 +39,20 @@
 
 ////START Shedule section
 .shedule {
-  &__logo-team {
-    img {
-      width: rem(160px) !important;
-      height: rem(160px) !important;
-    }
+  &__game {
+
   }
+  &__logo-team {
+    grid-template-rows: 1fr 2fr;
 
-
+   
+  }
+ &__logo-img {
+      img {
+        width: rem(180px) !important;
+        height: rem(180px) !important;
+      }
+    }
 
   &__home {
     @include font(rem(60px), 500, $titleFontFamily);

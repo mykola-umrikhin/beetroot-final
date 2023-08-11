@@ -105,11 +105,11 @@
 
   &__game {
     width: 100%;
-
+    max-width: rem(500px);
     padding: rem(20px) rem(15px);
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
-    // grid-template-rows: 0.5fr 0.3fr 0.2fr;
+    grid-template-rows: 0.2fr 0.1fr 0.2fr 0.2fr;
     background: $white;
     border-radius: rem(4px);
     justify-items: center;
@@ -120,13 +120,18 @@
     max-width: 100%;
     text-align: center;
     align-self: center;
+    display: grid;
+    grid-template-rows: 0.7fr 1fr;
+  }
+  &__logo-img {
+    width: 100%;
+    max-width: 100%;
     img {
       width: rem(120px) !important;
       height: rem(120px) !important;
       object-fit: contain !important;
     }
   }
-
   &__teame-name {
     @include font(rem(30px), 500, $titleFontFamily);
     @include respm;
@@ -138,10 +143,9 @@
   &__home {
     @include font(rem(50px), 500, $titleFontFamily);
     @include respm;
-    padding-bottom: 30%;
     text-align: center;
     color: $primaryBlue;
-    align-self: flex-end;
+    align-self: center;
   }
 
   &__league {
@@ -181,8 +185,8 @@
 .swiper-slide_shedule img {
   display: inline-block !important;
   text-align: center;
-  // width: 100% !important;
-  // height: auto !important;
+  width: 100% !important;
+  height: auto !important;
   object-fit: cover;
 }
 

@@ -2,7 +2,10 @@
   th {
     cursor: pointer;
   }
- 
+  td {
+    font-size: rem(18px);
+  }
+
   &__title {
     font-size: $h2Size;
   }
@@ -39,7 +42,7 @@
     span {
       vertical-align: super;
       font-size: rem(30px);
-      font-weight: 600;
+      font-weight: 400;
       text-transform: uppercase;
     }
   }

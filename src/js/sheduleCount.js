@@ -1,6 +1,6 @@
-const gameDate1 = '2023-08-28T18:30-07:00';
-const gameDate2 = '2023-08-30T20:00-07:00';
-const gameDate3 = '2023-09-02T19:00-06:00';
+const gameDate1 = '2023-11-07T17:30-07:00';
+const gameDate2 = '2023-11-15T18:00-07:00';
+const gameDate3 = '2023-11-20T19:00-07:00';
 
 const norm = (v) => (v < 10 ? '0' + v : v);
 
@@ -15,7 +15,6 @@ function countDown(gameDate, gameId) {
       game.innerHTML = res;
       return;
     }
-    console.log(dif);
     let days = Math.floor(dif / (1000 * 60 * 60 * 24));
     let hours = Math.floor((dif / (1000 * 60 * 60)) % 24);
     let minutes = Math.floor((dif / (1000 * 60)) % 60);

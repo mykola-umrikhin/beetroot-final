@@ -99,30 +99,15 @@
 
 .swiper-pagination {
   // .swiper-pagination_team
-
-  &_team-mob {
-    position: absolute !important;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    // height: rem(30px);
-    display: flex !important;
-    gap: rem(10px);
-    justify-content: center;
-    z-index: 999;
-  }
-  &-bulet_team-mob {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
+  padding-top: rem(20px);
+  &-bullet {
+    width: 12px;
+    height: 12px;
+    background: $primaryBlue !important;
     opacity: 1;
-    background: $primaryBlue;
-    &:hover {
-      cursor: pointer;
-    }
   }
 
-  &-bulet-active_team-mob {
-    background: $secondGold;
+  &-bullet-active {
+    background: $secondGold !important;
   }
 }
