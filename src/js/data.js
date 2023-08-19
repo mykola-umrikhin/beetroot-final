@@ -93,7 +93,7 @@ const players = [
 ];
 
 const playersId =
-  '?player_ids[]=224&player_ids[]=475&player_ids[]=7155648&player_ids[]=131&player_ids[]=185&player_ids[]=2189&player_ids[]=187&player_ids[]=3547240&player_ids[]=17553979&player_ids[]=666848&player_ids[]=282&player_ids[]=443&player_ids[]=17553992&player_ids[]=115&player_ids[]=666676';
+  '?season=2022&player_ids[]=224&player_ids[]=475&player_ids[]=7155648&player_ids[]=131&player_ids[]=185&player_ids[]=2189&player_ids[]=187&player_ids[]=3547240&player_ids[]=17553979&player_ids[]=666848&player_ids[]=282&player_ids[]=443&player_ids[]=17553992&player_ids[]=115&player_ids[]=666676';
 
 const fetchIds = [
   'fullName',

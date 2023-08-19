@@ -63,9 +63,9 @@ ssm.addState({
 });
 // ?END MOBILE Menu
 ////START validate email script
-const input = document.querySelector('.subscribe__email');
+const input = document.querySelectorAll('.subscribe__email');
 document.addEventListener('submit', handleSubmit);
-input.addEventListener('input', onInput);
+input.forEach((item) => item.addEventListener('input', onInput));
 
 function handleSubmit(e) {
   const { target } = e;
@@ -76,13 +76,20 @@ function handleSubmit(e) {
 }
 
 const EMAIL_REGEXP =
-  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+  /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/;
 
-function onInput() {
-  if (isEmailValid(input.value)) {
-    input.style.color = 'black';
+function onInput(e) {
+  if (isEmailValid(e.target.value)) {
+    e.target.style.color = 'black';
   } else {
-    input.style.color = 'red';
+    e.target.style.color = 'red';
+    $('.subscribe__email').notify('Please, enter valid email', {
+      position: 'top left',
+      className: 'warn',
+      clickToHide: true,
+      autoHide: true,
+      autoHideDelay: 2000,
+    });
   }
 }
 
@@ -99,12 +106,6 @@ gal.isotope({
   layoutMode: 'packery',
   packery: {
     gutter: 10,
-  },
-  getSortData: {
-    name: 'h2',
-    created: function (item) {
-      return item.dataset.create;
-    },
   },
 });
 
@@ -126,39 +127,3 @@ Fancybox.bind('[data-fancybox]', {
   // Your custom options
 });
 // ?END FANCYBOX
-
-// function initMobile() {
-//   console.log('is-mobile');
-// }
-
-// function initTablet() {
-//   console.log('is-tablet');
-// }
-
-// function initDesktop() {
-//   console.log('is-desktop');
-// }
-
-// ssm.addStates([
-//   {
-//     id: 'mobile',
-//     query: '(max-width: 640px)',
-//     onEnter: function () {
-//       initMobile();
-//     },
-//   },
-//   {
-//     id: 'tablet',
-//     query: '(min-width: 641px) and (max-width: 992px)',
-//     onEnter: function () {
-//       initTablet();
-//     },
-//   },
-//   {
-//     id: 'desktop',
-//     query: '(min-width: 993px)',
-//     onEnter: function () {
-//       initDesktop();
-//     },
-//   },
-// ]);

@@ -53,27 +53,36 @@ function Cart({ closeCart, opened, data, onRemoveItem }) {
         />
         <h3 className="cart__title">Cart</h3>
         {data.length > 0 ? (
-          <div className="cart__items">
-            {data.map((obj) => {
-              return (
-                <div key={obj.id} className="cart__item">
-                  <div className="cart__item-del">
-                    <img
-                      onClick={() => onRemoveItem(obj.id)}
-                      className="cart__item-del-btn"
-                      src="i/shop/btn-remove.svg"
-                      alt="Delete product"
-                    />
+          <>
+            <div className="cart__items">
+              {data.map((obj) => {
+                return (
+                  <div key={obj.id} className="cart__item">
+                    <div className="cart__item-del">
+                      <img
+                        onClick={() => onRemoveItem(obj.id)}
+                        className="cart__item-del-btn"
+                        src="i/shop/btn-remove.svg"
+                        alt="Delete product"
+                      />
+                    </div>
+                    <img src={obj.imgUrl} alt="" className="cart__item-img" />
+                    <div className="">
+                      <p className="cart__item-title">{obj.title}</p>
+                      <span className="cart__item-price">{`$${obj.price}`}</span>
+                    </div>
                   </div>
-                  <img src={obj.imgUrl} alt="" className="cart__item-img" />
-                  <div className="">
-                    <p className="cart__item-title">{obj.title}</p>
-                    <span className="cart__item-price">{`$${obj.price}`}</span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+            <div>
+              <p className="cart__price">
+                <span>Total price:</span>
+                <span>{` $${totalPrice.toFixed(2)}`}</span>
+              </p>
+              <button className="cart__order">Go to order</button>
+            </div>
+          </>
         ) : (
           <div className="cart__empty">
             <img
@@ -88,18 +97,6 @@ function Cart({ closeCart, opened, data, onRemoveItem }) {
               Go back
             </button>
           </div>
-        )}
-
-        {data.length > 0 ? (
-          <div>
-            <p className="cart__price">
-              <span>Total price:</span>
-              <span>{` $${totalPrice.toFixed(2)}`}</span>
-            </p>
-            <button className="cart__order">Go to order</button>
-          </div>
-        ) : (
-          ''
         )}
       </div>
     </div>
@@ -134,9 +131,9 @@ function App() {
 
   const addToCart = (obj) => {
     if (cartItems.find((item) => item.id === obj.id)) {
-      setCartItems((prev) => prev.filter((item) => item.id !== obj.id));
+      onRemoveItem(obj.id);
     } else {
-      setCartItems((prev) => [...prev, obj]);
+      setCartItems((prevCartItems) => [...prevCartItems, obj]);
     }
   };
 
@@ -167,7 +164,7 @@ function App() {
               price={item.price}
               imgUrl={item.imageUrl}
               onAddCart={(obj) => addToCart(obj)}
-              addCart={cartItems.some((prod) => +prod.id === +item.id)}
+              addCart={cartItems.find((prod) => +prod.id === +item.id)}
             />
           );
         })}

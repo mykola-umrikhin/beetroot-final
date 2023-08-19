@@ -61,7 +61,7 @@ var swiperTeamMob = new Swiper('.swiper_team-mob', {
       slidesPerGroup: 2,
     },
 
-    1024: {
+    992: {
       slidesPerView: 3,
       slidesPerGroup: 3,
     },

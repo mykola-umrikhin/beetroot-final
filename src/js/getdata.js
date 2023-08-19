@@ -109,27 +109,27 @@ const renderStatPlayer = (arr, numb, idDiv, typeStat) => {
   arr.sort((a, b) => b[numb] - a[numb]);
   const res = arr.map((item, idx) => {
     while (idx <= 2) {
-      if (idx === 0) {
-        return `<div class="player-stat__player">
-        <h3 class="player-stat__title">${typeStat} Per Game</h3>
-        <p class="player-stat__stat">${item[numb].toFixed(1)} <span>${numb}</span></p>
+      return `<div class="player-stat__player">
+        ${
+          idx === 0
+            ? `<h3 class="player-stat__title">${typeStat} Per Game</h3>`
+            : '<h3 class="player-stat__title"></h3>'
+        }
+        
+        <p class="player-stat__stat">${item[numb].toFixed(
+          1
+        )} <span>${numb}</span></p>
         <p class="player-stat__name">${item.fullName}</p>
 
-        <div class="player-stat__img player-stat__img_first">
-          <img src="i/players/${item.pseudo}.webp" onerror="this.src='i/players/${item.pseudo}.avif';" alt="${item.fullName}" />
+        <div class="player-stat__img ${
+          idx === 0 ? 'player-stat__img_first' : ''
+        }">
+          
+        <img src="i/players/${item.pseudo}.webp" onerror="this.src='i/players/${
+        item.pseudo
+      }.avif';" alt="${item.fullName}" />
         </div>
       </div>`;
-      } else {
-        return `<div class="player-stat__player">
-        <h3 class="player-stat__title"></h3>
-        <p class="player-stat__stat">${item[numb].toFixed(1)} <span>${numb}</span></p>
-        <p class="player-stat__name">${item.fullName}</p>
-
-        <div class="player-stat__img">
-        <img src="i/players/${item.pseudo}.webp" onerror="this.src='i/players/${item.pseudo}.avif';" alt="${item.fullName}" />
-        </div>
-      </div>`;
-      }
     }
   });
   document.getElementById(idDiv).innerHTML = res.join('');
