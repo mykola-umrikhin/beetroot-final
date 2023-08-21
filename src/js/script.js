@@ -37,12 +37,9 @@ function resetMobileMenu() {
 
 /* =======================  */
 
-function initMobile() {
-  console.log('is-mobile');
-}
+function initMobile() {}
 
 function initDesktop() {
-  console.log('is-desktop');
   resetMobileMenu();
 }
 
@@ -62,8 +59,10 @@ ssm.addState({
   },
 });
 // ?END MOBILE Menu
+
 ////START validate email script
 const input = document.querySelectorAll('.subscribe__email');
+const formDiv = document.querySelectorAll('.form-wrapper');
 document.addEventListener('submit', handleSubmit);
 input.forEach((item) => item.addEventListener('input', onInput));
 
@@ -73,10 +72,13 @@ function handleSubmit(e) {
     return;
   }
   e.preventDefault();
+  const subscribeBlock =
+    '<p class="subscribe__promo-text">Thank you for subscribing! We sent you promo code with discounts on tickets</p>';
+  formDiv.forEach((i) => (i.innerHTML = subscribeBlock));
 }
 
 const EMAIL_REGEXP =
-  /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/;
+  /^((([0-9A-Za-z]{1}[0-9A-z_\-\.]{1,}))@([A-Za-z]{1,}\.){1,2}[A-Za-z]{2,4})$/i;
 
 function onInput(e) {
   if (isEmailValid(e.target.value)) {
@@ -97,6 +99,7 @@ function isEmailValid(value) {
   return EMAIL_REGEXP.test(value);
 }
 //?END validate email script
+
 // //START ISOTOP
 
 const gal = $('.gallery-isotop');
@@ -123,7 +126,5 @@ function handleFilter() {
 // ?END ISOTOP
 
 // //START FANCYBOX
-Fancybox.bind('[data-fancybox]', {
-  // Your custom options
-});
+Fancybox.bind('[data-fancybox]', {});
 // ?END FANCYBOX

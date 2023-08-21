@@ -40,4 +40,8 @@
     // flex-basis: 70%;
     min-width: 70%;
   }
+  &__promo-text {
+    color: $white;
+    font-size: rem(22px);
+  }
 }

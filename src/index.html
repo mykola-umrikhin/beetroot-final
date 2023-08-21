@@ -1103,15 +1103,17 @@
         <h2 class="subscribe__title">
           Subsrcibe for our news and get free ticket
         </h2>
-        <form action="" class="subscribe__form" name="subscribe" novalidate>
-          <input
-            type="email"
-            class="subscribe__email"
-            placeholder="Enter your email"
-            novalidate
-          />
-          <input type="submit" class="subscribe__submit" value="Submit" />
-        </form>
+        <div class="form-wrapper">
+          <form action="" class="subscribe__form" name="subscribe" novalidate>
+            <input
+              type="email"
+              class="subscribe__email"
+              placeholder="Enter your email"
+              novalidate
+            />
+            <input type="submit" class="subscribe__submit" value="Submit" />
+          </form>
+        </div>
       </div>
     </section>
     <!-- ?END SUBSCRIBE -->
@@ -1286,10 +1288,9 @@
               </div>
             </div>
           </div>
-          <div class="swiper-button-next swiper-button-next_team"></div>
-          <div class="swiper-button-prev swiper-button-prev_team"></div>
+          
           <div class="swiper-pagination "></div>
-          <!-- <div class="swiper-pagination_team"></div> -->
+
         </div>
         <!-- ?END Mobile SLIDER  -->
 
@@ -1526,8 +1527,9 @@
     <!-- ?END STATISTIC team -->
 
     <!-- //START PLAYER stat -->
-    <section>
-      <div class="container">
+    <div class="container">
+      <section>
+      
         <div id="statistic-player" class="player-stat">
           <h2 class="player-stat__head-title">Teams leaders</h2>
 
@@ -1556,8 +1558,8 @@
             <div class="swiper-pagination swiper-pagination_player"></div>
           </div>
         </div>
-      </div>
     </section>
+  </div>
     <!-- ?END PLAYER stat -->
 
     <!-- //START GALLERY -->
@@ -1576,8 +1578,6 @@
               Images
             </button>
             <button class="gallery__tab-item" data-filter="video">Video</button>
-            <!-- <button class="gallery__tab-item" data-filter="audio">Audio</button> -->
-            <!-- <button class="gallery__tab-item">Analysis</button> -->
           </div>
           <div class="gallery-isotop">
             <a
@@ -1775,7 +1775,7 @@
           <div class="footer-nav">
             <ul class="footer-nav__list">
               <li class="footer-nav__item">
-                <a href="" class="footer-nav__link">about club</a>
+                <a href="" class="footer-nav__link">About club</a>
               </li>
               <li class="footer-nav__item">
                 <a href="" class="footer-nav__link">Team</a>
@@ -1803,7 +1803,7 @@
           <h3 class="footer-nav__title footer-nav__title_right">
             Sign up for email alerts
           </h3>
-          <div class="footer-subscribe">
+          <div class="footer-subscribe form-wrapper">
             <p>Select topics and stay current with our latest news</p>
             <form
               action=""

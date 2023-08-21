@@ -32,16 +32,17 @@ function ProductCard({ id, title, price, imgUrl, onAddCart, addCart }) {
   );
 }
 
-function CartIcon({ data, openCart }) {
+function CartIcon({ cartData, openCart }) {
   return (
     <div className="cart-icon" onClick={openCart}>
       <i className="icon-cart cart-icon__img"></i>
-      <span className="cart-icon__count">{data.length}</span>
+      <span className="cart-icon__count">{cartData.length}</span>
     </div>
   );
 }
-function Cart({ closeCart, opened, data, onRemoveItem }) {
-  const totalPrice = data.reduce((sum, item) => (sum += item.price), 0);
+
+function Cart({ closeCart, opened, cartData, onRemoveItem }) {
+  const totalPrice = cartData.reduce((sum, item) => (sum += item.price), 0);
   return (
     <div className={`cart ${opened ? '' : 'hidden'}`}>
       <div className="cart__wrapper">
@@ -52,10 +53,10 @@ function Cart({ closeCart, opened, data, onRemoveItem }) {
           onClick={closeCart}
         />
         <h3 className="cart__title">Cart</h3>
-        {data.length > 0 ? (
+        {cartData.length > 0 ? (
           <>
             <div className="cart__items">
-              {data.map((obj) => {
+              {cartData.map((obj) => {
                 return (
                   <div key={obj.id} className="cart__item">
                     <div className="cart__item-del">
@@ -138,19 +139,19 @@ function App() {
   };
 
   const onRemoveItem = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+    setCartItems((prevCartItems) => prevCartItems.filter((item) => item.id !== id));
   };
 
   return (
     <div id="shop">
       <h2 className="shop__title">Shop</h2>
       <div className="shop__wrapper">
-        <CartIcon data={cartItems} openCart={() => setCartOpened(true)} />
+        <CartIcon cartData={cartItems} openCart={() => setCartOpened(true)} />
         {cartOpened && (
           <Cart
             closeCart={() => setCartOpened(false)}
             opened={cartOpened}
-            data={cartItems}
+            cartData={cartItems}
             onRemoveItem={onRemoveItem}
           />
         )}

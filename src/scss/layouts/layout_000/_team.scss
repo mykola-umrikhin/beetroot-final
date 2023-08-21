@@ -24,12 +24,14 @@
 }
 .swiper-wrapper {
   // .swiper-wrapper_team
+  padding-bottom: rem(20px);
 }
 
 .swiper-slide {
   // .swiper-slide_team
   &_team-mob {
     flex-direction: row !important;
+    
   }
 }
 .team-item {
@@ -99,7 +101,8 @@
 
 .swiper-pagination {
   // .swiper-pagination_team
-  padding-top: rem(20px);
+  margin-top: rem(20px);
+  bottom: 0 !important;
   &-bullet {
     width: 12px;
     height: 12px;
@@ -110,4 +113,8 @@
   &-bullet-active {
     background: $secondGold !important;
   }
+}
+
+.swiper-button-next_team, .swiper-button-prev_team {
+  visibility: collapse;
 }

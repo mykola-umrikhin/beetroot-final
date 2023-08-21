@@ -1,15 +1,7 @@
-// import { players, playersId } from "./data";
-console.log(playersId, players);
 // //START FETCH players
 const tab = document.querySelector('.js-statistic');
-//
-let playersArr = [];
 const statTh = document.querySelectorAll('th');
-const removeClas = (clas1, clas2) => {
-  statTh.forEach((item) => {
-    item.classList.remove(clas1) || item.classList.remove(clas2);
-  });
-};
+let playersArr = [];
 
 const getData = async (url) => {
   try {
@@ -17,58 +9,65 @@ const getData = async (url) => {
       `https://www.balldontlie.io/api/v1/season_averages${url}`
     );
     const { data } = await response.json();
-
-    for (let i = 0; i < players.length; i++) {
-      playersArr.push(Object.assign(players[i], data[i]));
-    }
-    document.addEventListener('click', handleSort);
-    let flag = [];
-
-    for (let i = 0; i <= 11; i++) {
-      flag.push(true);
-    }
-
-    function handleSort({ target }) {
-      if (!target.className === 'js-click') {
-        console.log('click', target.className);
-        return;
-      }
-
-      sortIds.forEach((item, idx) => {
-        if (target.id === item && target.dataset.string) {
-          flag[idx]
-            ? (sortByStr(playersArr, fetchIds[idx], true),
-              target.classList.add('sort-down'))
-            : (sortByStr(playersArr, fetchIds[idx], false),
-              target.classList.add('sort-up'));
-          flag[idx] = !flag[idx];
-        }
-
-        if (target.id === item && !target.dataset.string) {
-          flag[idx]
-            ? (sortByNumb(playersArr, fetchIds[idx], true),
-              target.classList.add('sort-down'))
-            : (sortByNumb(playersArr, fetchIds[idx], false),
-              target.classList.add('sort-up'));
-          flag[idx] = !flag[idx];
-        }
-      });
-    }
-    arr1 = playersArr.map((item) => renderFetch(item));
-    tab.innerHTML = arr1.join('');
-    renderStatPlayer(playersArr, 'pts', 'player-stat-point', 'Points');
-    renderStatPlayer(playersArr, 'reb', 'player-stat-reb', 'Rebounds');
-    renderStatPlayer(playersArr, 'ast', 'player-stat-asst', 'Assists');
-    renderStatPlayer(playersArr, 'stl', 'player-stat-stl', 'Steals');
+    return data;
   } catch (err) {
     console.log(err);
     tab.innerHTML =
       '<tr><td colspan="13" style="text-align: center; font-weight: 600">Error fetch data...</td></tr>';
   }
 };
-getData(playersId);
 
-function renderFetch(item) {
+const sortData = async () => {
+  const data = await getData(playersId);
+
+  for (let i = 0; i < players.length; i++) {
+    playersArr.push(Object.assign(players[i], data[i]));
+  }
+
+  document.addEventListener('click', (e) => {
+    handleSort(playersArr, e.target);
+  });
+
+  const res = playersArr.map((item) => renderFetch(item));
+  tab.innerHTML = res.join('');
+  renderStatPlayer(playersArr, 'pts', 'player-stat-point', 'Points');
+  renderStatPlayer(playersArr, 'reb', 'player-stat-reb', 'Rebounds');
+  renderStatPlayer(playersArr, 'ast', 'player-stat-asst', 'Assists');
+  renderStatPlayer(playersArr, 'stl', 'player-stat-stl', 'Steals');
+};
+sortData();
+
+let flag = [];
+for (let i = 0; i <= 11; i++) {
+  flag.push(true);
+}
+
+const handleSort = (data, target) => {
+  if (!target.classList.contains('js-click')) {
+    return;
+  }
+  sortIds.forEach((item, idx) => {
+    if (target.id === item && target.dataset.string) {
+      flag[idx]
+        ? (sortByStr(data, fetchIds[idx], true),
+          target.classList.add('sort-down'))
+        : (sortByStr(data, fetchIds[idx], false),
+          target.classList.add('sort-up'));
+      flag[idx] = !flag[idx];
+    }
+
+    if (target.id === item && !target.dataset.string) {
+      flag[idx]
+        ? (sortByNumb(data, fetchIds[idx], true),
+          target.classList.add('sort-down'))
+        : (sortByNumb(data, fetchIds[idx], false),
+          target.classList.add('sort-up'));
+      flag[idx] = !flag[idx];
+    }
+  });
+};
+
+const renderFetch = (item) => {
   return `<tr><td>${item.fullName}</td>
      <td>${item.games_played}</td>
      <td>${item.min}</td>
@@ -82,7 +81,13 @@ function renderFetch(item) {
      <td>${item.stl.toFixed(1)}</td>
      <td>${item.blk.toFixed(1)}</td>
      </tr>`;
-}
+};
+
+const removeClas = (clas1, clas2) => {
+  statTh.forEach((item) => {
+    item.classList.remove(clas1) || item.classList.remove(clas2);
+  });
+};
 
 const sortByStr = (arr, str, rev = false) => {
   rev
@@ -134,8 +139,4 @@ const renderStatPlayer = (arr, numb, idDiv, typeStat) => {
   });
   document.getElementById(idDiv).innerHTML = res.join('');
 };
-
-////START SORT Table
-
-// ?END SORT Table
 // ?END FETCH players
