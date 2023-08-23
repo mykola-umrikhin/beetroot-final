@@ -46,14 +46,6 @@
   }
 }
 
-@mixin noselect() {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 @mixin font($s, $w: '', $f: $textFontFamily) {
   font: #{$w} #{$s} #{$f};
 }
@@ -62,12 +54,3 @@
   padding: 0;
   margin: 0;
 }
-// @mixin setCssVar($cssProp, $val) {
-//   $prefix: if(variable-exists(prefix), #{$prefix}, "");
-//   --#{$prefix}#{$cssProp}: #{$val};
-// }
-
-// @mixin getCssVar($cssProp, $cssVar: $cssProp) {
-//   $prefix: if(variable-exists(prefix), #{$prefix}, "");
-//   #{$cssProp}: var(--#{$prefix}#{$cssVar});
-// }

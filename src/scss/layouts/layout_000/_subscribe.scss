@@ -12,10 +12,7 @@
   }
 
   &__title {
-    @include respm;
-    @include font($h2-mob, 600, $titleFontFamily);
     color: $secondGold;
-    text-transform: uppercase;
   }
 
   &__email {

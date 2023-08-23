@@ -3,23 +3,17 @@
 
   &__title {
     text-align: center;
-    @include font($h2-mob, 600, $titleFontFamily);
-    color: $primaryBlue;
-    text-transform: uppercase;
-    @include respm;
+    
   }
 
   &__tab-list {
     @include respm;
-    list-style: none;
-    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: rem(10px) rem(20px);
   }
 
   &__tab-item {
-    @include font(rem(22px), 500, $titleFontFamily);
     position: relative;
     overflow: hidden;
 
@@ -78,7 +72,7 @@
     @include respm;
     @include font(rem(24px), 500, $titleFontFamily);
     height: 100%;
-    
+
     a {
       text-decoration: none;
       text-transform: uppercase;

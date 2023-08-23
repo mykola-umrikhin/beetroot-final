@@ -1,4 +1,7 @@
 .gallery {
+  &__title {
+    @include respm;
+  }
   &__tab-nav {
     margin: rem(10px) 0;
     justify-content: space-around;

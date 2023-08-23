@@ -7,6 +7,22 @@ body {
   font-family: $textFontFamily;
   font-size: 1rem;
 }
+.title {
+  // @include respm;
+  @include font($h2-mob, 600, $titleFontFamily);
+  text-transform: uppercase;
+  color: $primaryBlue;
+}
+.tab-nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.tab-item {
+  @include font(rem(20px), 500, $titleFontFamily);
+  text-transform: uppercase;
+}
 
 .container {
   max-width: 1240px;

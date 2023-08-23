@@ -157,10 +157,14 @@ footer {
     @include font(rem(15px), 600);
     border-radius: 0;
     text-transform: uppercase;
-    transition: all 0.4s;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.3s ease-in;
+
     &:hover {
-      cursor: pointer;
-      transform: translateY(-5%);
+      border: 3px solid $secondGold;
+      background: $primaryBlue;
+      color: $secondGold;
       box-shadow: 0px 8px 10px rgba(253, 198, 43, 0.4);
     }
   }

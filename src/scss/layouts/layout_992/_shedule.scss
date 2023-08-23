@@ -8,9 +8,7 @@
     box-shadow: 0 rem(10px) rem(10px) rem(5px) rgba(0, 0, 0, 0.3);
     max-width: rem(640px);
   }
-  &__title {
-    font-size: $h2Size;
-  }
+
 }
 //? END Last Result
 
@@ -22,9 +20,6 @@
 
   &__title {
     text-align: center;
-    @include respm;
-    @include font($h2Size, 600, $titleFontFamily);
-    text-transform: uppercase;
     color: $secondGold;
   }
 

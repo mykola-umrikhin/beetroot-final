@@ -9,25 +9,30 @@ function ProductCard({ id, title, price, imgUrl, onAddCart, addCart }) {
     <div className="shop__item">
       <img src={imgUrl} alt="" className="shop__item-img" />
 
-      <span className="shop__item-title">{title}</span>
-      <p className="shop__item-price">
-        Price:
-        <span className="shop__item-price_big"> ${price} </span>
-      </p>
-      <p className="shop__item-cart">
-        Add to cart:
-        <img
-          style={{ width: '32px', height: '32px', cursor: 'pointer' }}
-          src={
-            !isAdd ? '/i/shop/add-to-cart-3046.svg' : '/i/shop/btn-checked.svg'
-          }
-          alt=""
-          onClick={() => {
-            setIsAdd(!isAdd);
-            onAddCart({ title, imgUrl, price, id });
-          }}
-        />
-      </p>
+      <p className="shop__item-title">{title}</p>
+      <div className="shop__item-price-wrapper">
+        <p className="shop__item-price">
+          Price:
+          <span className="shop__item-price_big"> ${price} </span>
+        </p>
+
+        <p className="shop__item-cart">
+          Add to cart:
+          <img
+            style={{ width: '32px', height: '32px', cursor: 'pointer' }}
+            src={
+              !isAdd
+                ? '/i/shop/add-to-cart-3046.svg'
+                : '/i/shop/btn-checked.svg'
+            }
+            alt=""
+            onClick={() => {
+              setIsAdd(!isAdd);
+              onAddCart({ title, imgUrl, price, id });
+            }}
+          />
+        </p>
+      </div>
     </div>
   );
 }
@@ -44,13 +49,14 @@ function CartIcon({ cartData, openCart }) {
 function Cart({ closeCart, opened, cartData, onRemoveItem }) {
   const totalPrice = cartData.reduce((sum, item) => (sum += item.price), 0);
   return (
-    <div className={`cart ${opened ? '' : 'hidden'}`}>
-      <div className="cart__wrapper">
+    <div className={`cart ${opened ? '' : 'hidden'}`} onClick={closeCart}>
+      <div className="cart__wrapper" onClick={(e) => e.stopPropagation()}>
         <img
           className="cart__close-btn"
           src="i/shop/btn-remove.svg"
           alt="Close cart"
           onClick={closeCart}
+          style={{ cursor: 'pointer' }}
         />
         <h3 className="cart__title">Cart</h3>
         {cartData.length > 0 ? (
@@ -63,12 +69,15 @@ function Cart({ closeCart, opened, cartData, onRemoveItem }) {
                       <img
                         onClick={() => onRemoveItem(obj.id)}
                         className="cart__item-del-btn"
-                        src="i/shop/btn-remove.svg"
+                        src="i/shop/delete_product.png"
                         alt="Delete product"
+                        style={{ cursor: 'pointer' }}
                       />
                     </div>
-                    <img src={obj.imgUrl} alt="" className="cart__item-img" />
-                    <div className="">
+                    <div className="cart__item-img">
+                      <img src={obj.imgUrl} alt="" className="" />
+                    </div>
+                    <div className="cart__item-text">
                       <p className="cart__item-title">{obj.title}</p>
                       <span className="cart__item-price">{`$${obj.price}`}</span>
                     </div>
@@ -81,7 +90,9 @@ function Cart({ closeCart, opened, cartData, onRemoveItem }) {
                 <span>Total price:</span>
                 <span>{` $${totalPrice.toFixed(2)}`}</span>
               </p>
-              <button className="cart__order">Go to order</button>
+              <button className="cart__order" style={{ cursor: 'pointer' }}>
+                Go to order
+              </button>
             </div>
           </>
         ) : (
@@ -94,7 +105,11 @@ function Cart({ closeCart, opened, cartData, onRemoveItem }) {
             <p className="cart__empty-title">
               Your cart is empty. Please, add product to cart{' '}
             </p>
-            <button onClick={closeCart} className="cart__empty-btn-close">
+            <button
+              onClick={closeCart}
+              className="cart__empty-btn-close"
+              style={{ cursor: 'pointer' }}
+            >
               Go back
             </button>
           </div>
@@ -139,12 +154,14 @@ function App() {
   };
 
   const onRemoveItem = (id) => {
-    setCartItems((prevCartItems) => prevCartItems.filter((item) => item.id !== id));
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== id)
+    );
   };
 
   return (
     <div id="shop">
-      <h2 className="shop__title">Shop</h2>
+      <h2 className="shop__title title">Shop</h2>
       <div className="shop__wrapper">
         <CartIcon cartData={cartItems} openCart={() => setCartOpened(true)} />
         {cartOpened && (

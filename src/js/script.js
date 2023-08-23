@@ -61,20 +61,25 @@ ssm.addState({
 // ?END MOBILE Menu
 
 ////START validate email script
-const input = document.querySelectorAll('.subscribe__email');
+const inputs = document.querySelectorAll('.subscribe__email');
 const formDiv = document.querySelectorAll('.form-wrapper');
 document.addEventListener('submit', handleSubmit);
-input.forEach((item) => item.addEventListener('input', onInput));
+inputs.forEach((item) => item.addEventListener('input', onInput));
 
 function handleSubmit(e) {
   const { target } = e;
-  if (target.name !== 'subscribe') {
-    return;
-  }
   e.preventDefault();
-  const subscribeBlock =
-    '<p class="subscribe__promo-text">Thank you for subscribing! We sent you promo code with discounts on tickets</p>';
-  formDiv.forEach((i) => (i.innerHTML = subscribeBlock));
+  if (
+    target.name !== 'subscribe' ||
+    (!isEmailValid(inputs[0].value) && !isEmailValid(inputs[1].value))
+  ) {
+    // console.log('return', target);
+    return;
+  } else {
+    const subscribeBlock =
+      '<p class="subscribe__promo-text">Thank you for subscribing! We sent you promo code with discounts on tickets</p>';
+    formDiv.forEach((i) => (i.innerHTML = subscribeBlock));
+  }
 }
 
 const EMAIL_REGEXP =

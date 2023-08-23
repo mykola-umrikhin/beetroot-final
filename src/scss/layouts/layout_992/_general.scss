@@ -1,0 +1,22 @@
+.title {
+  font-size: $h2Size;
+}
+.tab-item {
+  &::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: $secondGold;
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    &::after {
+      transition: transform 0.5s;
+      transform: translateX(100%);
+    }
+  }
+}

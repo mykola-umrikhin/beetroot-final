@@ -3,13 +3,7 @@
   padding-bottom: rem(20px);
 
   &__title {
-    margin: 0;
-    padding: rem(20px) 0;
-    @include respm;
-    @include font($h2-mob, 600, $titleFontFamily);
-    color: $primaryBlue;
     text-align: center;
-    text-transform: uppercase;
   }
   &__table {
     width: 100%;
@@ -89,11 +83,6 @@
   margin-top: rem(20px);
   &__head-title {
     text-align: center;
-    @include font($h2-mob, 600, $titleFontFamily);
-    @include respm;
-    padding: rem(20px) 0;
-    color: $primaryBlue;
-    text-transform: uppercase;
   }
   &__player {
     padding: rem(10px);
@@ -181,7 +170,9 @@
   height: rem(30px) !important;
   display: flex;
   justify-content: space-between;
-  @include font($h3-mob, 500, $titleFontFamily);
+  @include font(rem(20px), 500, $titleFontFamily);
+  text-transform: uppercase;
+  margin: 0 !important;
 }
 
 .swiper-pagination-bulet_player {
@@ -192,7 +183,6 @@
   opacity: 1;
   background: transparent !important;
   border-radius: 0;
-  text-transform: uppercase;
   border-bottom: 3px solid $white;
   cursor: pointer;
 }

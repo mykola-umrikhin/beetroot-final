@@ -4,10 +4,6 @@
   // .team__title
 
   &__title {
-    @include respm;
-    @include font($h2-mob, 600, $titleFontFamily);
-    text-transform: uppercase;
-    color: $primaryBlue;
     text-align: center;
   }
 }
@@ -31,7 +27,6 @@
   // .swiper-slide_team
   &_team-mob {
     flex-direction: row !important;
-    
   }
 }
 .team-item {
@@ -115,6 +110,7 @@
   }
 }
 
-.swiper-button-next_team, .swiper-button-prev_team {
+.swiper-button-next_team,
+.swiper-button-prev_team {
   visibility: collapse;
 }

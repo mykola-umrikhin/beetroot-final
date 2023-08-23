@@ -1,12 +1,7 @@
 .shop {
-
- 
-   &__item {
-     grid-template-rows: 1fr .7fr 0.3fr 0.3fr;
-     width: calc(25% - 30px);
-     box-shadow: 0 rem(10px) rem(10px) rem(5px) rgba(0, 0, 0, 0.3);
-     &-title {
-       padding-top: rem(16px);
-     }
-   }
- }
+  &__item {
+    &-title {
+      padding-top: rem(16px);
+    }
+  }
+}

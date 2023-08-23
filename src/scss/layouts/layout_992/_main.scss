@@ -1,32 +1,4 @@
-#main-tab-1 {
-  background: linear-gradient(to right, #{$primaryBlue}, transparent),
-    url('#{$imagesPath}hero1.jpg') no-repeat, $primaryBlue;
-  background-size: cover;
-  background-position: top;
-}
 
-#main-tab-2 {
-  background: linear-gradient(to right, #{$primaryBlue}, transparent),
-    url('#{$imagesPath}main-tab-2.avif') no-repeat, $primaryBlue;
-  background-size: cover;
-  background-position: top;
-}
-
-#main-tab-3 {
-  background: linear-gradient(to right, #{$primaryBlue}, transparent),
-    url('#{$imagesPath}main-tab-3.avif') no-repeat, $primaryBlue;
-  background-size: cover;
-  background-position: top;
-}
-
-#main-tab-4 {
-  background: linear-gradient(to right, #{$primaryBlue}, transparent),
-    url('#{$imagesPath}main-tab-4.avif') no-repeat, $primaryBlue;
-  background-size: cover;
-  background-position: top;
-}
-main {
-}
 
 // //START TAB navigation
 .main-tab {
@@ -98,10 +70,13 @@ main {
   &__button {
     padding: rem(16px) rem(28px);
     @include font(rem(24px), 600, $titleFontFamily);
-
-    transition: transform 0.2s ease-in;
+    border: 3px solid transparent;
+    transition:  0.3s ease-in;
     &:hover {
-      transform: scale(1.02);
+      border: 3px solid $secondGold;
+      background: $primaryBlue;
+      color: $secondGold;
+      box-shadow: 0px 8px 10px rgba(253, 198, 43, 0.4);
     }
   }
 }

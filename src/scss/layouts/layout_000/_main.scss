@@ -4,7 +4,7 @@
       rgba(29, 66, 138, 0.9),
       rgba(29, 66, 138, 0.4)
     ),
-    url('#{$imagesPath}hero1.jpg') no-repeat, $primaryBlue;
+    url('#{$imagesPath}hero1.jpg') no-repeat;
   background-size: cover;
   background-position: 30% 0;
 }
@@ -15,7 +15,7 @@
       rgba(29, 66, 138, 0.9),
       rgba(29, 66, 138, 0.4)
     ),
-    url('#{$imagesPath}main-tab-2.avif') no-repeat, $primaryBlue;
+    url('#{$imagesPath}main-tab-2.avif') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -26,7 +26,7 @@
       rgba(29, 66, 138, 0.9),
       rgba(29, 66, 138, 0.4)
     ),
-    url('#{$imagesPath}main-tab-3.avif') no-repeat, $primaryBlue;
+    url('#{$imagesPath}main-tab-3.avif') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -37,7 +37,7 @@
       rgba(29, 66, 138, 0.9),
       rgba(29, 66, 138, 0.4)
     ),
-    url('#{$imagesPath}main-tab-4.avif') no-repeat, $primaryBlue;
+    url('#{$imagesPath}main-tab-4.avif') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -93,19 +93,16 @@ main {
   &__title {
     width: 100%;
     @include respm;
-    // padding-left: rem(10px);
     @include font($h2-mob, 600, $titleFontFamily);
     text-transform: uppercase;
     color: $white;
   }
   &__text {
-    // height: rem(100px);
     margin: 0;
     padding: rem(20px) 0;
     @include font(rem(18px));
     line-height: rem(28px);
     width: calc(99%);
-    // height: cacl(99%);
     color: $white;
 
     p {
@@ -127,7 +124,6 @@ main {
     text-decoration: none;
     color: $primaryBlue;
     @include font(rem(18px), 600, $titleFontFamily);
-    // margin-top: rem(36px);
     border-radius: rem(4px);
     i {
       align-self: center;

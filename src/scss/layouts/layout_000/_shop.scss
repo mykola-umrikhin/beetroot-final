@@ -2,25 +2,21 @@
   margin: rem(40px) 0;
 
   &__title {
-    @include font($h2-mob, 600, $titleFontFamily);
     text-align: center;
-    text-transform: uppercase;
-    color: $primaryBlue;
   }
 
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
   }
 
   &__item {
     width: 100%;
     max-width: rem(460px);
-    display: grid;
-    grid-template-rows: 2fr 1fr 0.2fr 0.2fr;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     padding: rem(10px);
@@ -37,14 +33,15 @@
   &__item-title {
     @include font(rem(18px), 500);
     @include respm;
-    margin: rem(8px) 0;
-    align-self: flex-start;
+    margin: rem(10px) 0;
   }
   &__item-price {
     @include font(rem(20px));
     @include respm;
-    margin: rem(8px) 0;
-    flex-basis: 100%;
+    margin-bottom: rem(10px);
+    &-wrapper {
+     margin-top: auto; 
+    }
     &_big {
       @include font(rem(24px), 600);
       color: $primaryBlue;
@@ -54,7 +51,8 @@
     @include font(rem(20px), 600);
     @include respm;
     margin: rem(8px) 0;
-    flex-basis: 100%;
+    margin-top: auto;
+     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,6 +75,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   &__wrapper {
     width: 90%;
     height: 90%;
@@ -85,20 +84,24 @@
     border-radius: rem(8px);
     padding: rem(15px);
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    // align-items: flex-start;
+    // justify-content: center;
     text-align: center;
     overflow-y: auto;
+    gap: rem(10px);
   }
 
   &__close-btn {
+    // flex-basis: 100%;
     margin-left: auto;
   }
 
   &__title {
-    flex-basis: 100%;
+    // flex: 1;
     @include font($h3-mob, 600, $titleFontFamily);
+    @include respm;
     text-transform: uppercase;
     color: $primaryBlue;
   }
@@ -106,24 +109,33 @@
   &__items {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    // flex: 1;
     flex-basis: 100%;
   }
 
   &__item {
     display: flex;
+    flex-wrap: wrap;
     padding: rem(10px);
+    height: auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    gap: rem(12px);
+    // gap: rem(12px);
   }
 
   &__item-del {
-    order: 1;
+    // order: 1;
+    margin-left: auto;
   }
 
   &__item-img {
-    width: 30%;
-    height: 30%;
+    flex-basis: 100%;
+    height: rem(140px);
+    img {
+      height: 100%;
+    }
+  }
+  &__item-text {
+    flex-basis: 100%;
   }
   &__item-title {
     font-weight: 500;
@@ -138,6 +150,7 @@
     span:last-of-type {
       font-size: rem(20px);
       color: $primaryBlue;
+      font-weight: 600;
     }
   }
 
@@ -155,6 +168,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: rem(20px);
   }
   &__empty-title {
     @include font(rem(18px), 500);
@@ -164,7 +178,6 @@
     height: 70%;
   }
   &__empty-btn-close {
-    width: 45%;
     padding: rem(14px) rem(28px);
     @include font(1rem, 500, $textFontFamily);
     text-transform: uppercase;

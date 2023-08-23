@@ -3,10 +3,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  align-items: center;
   &__title {
     flex-basis: 25%;
-    @include font($h2Size, 600, $titleFontFamily);
   }
   &__tab-nav {
     flex-basis: 50%;
@@ -14,28 +13,10 @@
   &__tab-list {
     justify-content: space-between;
     flex-wrap: nowrap;
+    margin: 0;
   }
 
   &__tab-item {
-    @include font(rem(24px), 500, $titleFontFamily);
-
-    &::after {
-      content: '';
-      width: 100%;
-      height: 3px;
-      background: $secondGold;
-      position: absolute;
-      bottom: 0;
-      right: 100%;
-    }
-
-    &:hover {
-      cursor: pointer;
-      &::after {
-        transition: transform 0.5s;
-        transform: translateX(100%);
-      }
-    }
   }
 
   &__tab-item.news__tab-item_active {
@@ -94,7 +75,9 @@
       }
     }
   }
-
+  &__tags {
+    padding: 0;
+  }
   &__tag {
     a {
       @include font(rem(12px));

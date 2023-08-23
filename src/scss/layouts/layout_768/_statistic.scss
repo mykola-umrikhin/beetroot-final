@@ -9,7 +9,6 @@
 
 .player-stat {
   margin-top: rem(20px);
-  
 
   &__img {
     width: 45%;
@@ -22,7 +21,7 @@
 
 // //START SWIPER
 
-.swiper-pagination-bullet {
+.swiper-pagination_player {
   @include font(rem(24px), 500, $titleFontFamily);
 }
 

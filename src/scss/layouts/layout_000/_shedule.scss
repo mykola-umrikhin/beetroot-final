@@ -5,11 +5,6 @@
   padding-bottom: rem(40px);
 
   &__title {
-    margin: 0;
-    padding: 0;
-    @include font($h2-mob, 600, $titleFontFamily);
-    text-transform: uppercase;
-    color: $primaryBlue;
   }
 
   &__league {
@@ -97,9 +92,6 @@
 
   &__title {
     text-align: center;
-    @include respm;
-    @include font($h2-mob, 600, $titleFontFamily);
-    text-transform: uppercase;
     color: $secondGold;
   }
 

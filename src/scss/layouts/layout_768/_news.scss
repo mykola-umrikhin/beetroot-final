@@ -1,27 +1,15 @@
 .news {
   margin-top: rem(40px);
-
+  &__title {
+    @include respm;
+  }
   &__tab-list {
     margin-top: rem(20px);
   }
 }
 
 .news-item {
-  grid-template-rows: 1fr .7fr;
-  &__text {
-    display: grid;
-    grid-template-rows: 0.2fr 0.8fr 0.2fr;
-  }
   &__img {
     height: rem(240px);
-  }
-  &__date {
-    font-size: rem(14px);
-  }
-
-  &__tags {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 rem(10px);
   }
 }
