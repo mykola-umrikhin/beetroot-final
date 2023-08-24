@@ -46,10 +46,17 @@ function CartIcon({ cartData, openCart }) {
   );
 }
 
-function Cart({ closeCart, opened, cartData, onRemoveItem }) {
+function Cart({
+  closeCart,
+  opened,
+  cartData,
+  onRemoveItem,
+  isOrder,
+  clearCart,
+}) {
   const totalPrice = cartData.reduce((sum, item) => (sum += item.price), 0);
   return (
-    <div className={`cart ${opened ? '' : 'hidden'}`} onClick={closeCart}>
+    <div className={`cart ${opened ? 'cart_visible' : ''}`} onClick={closeCart}>
       <div className="cart__wrapper" onClick={(e) => e.stopPropagation()}>
         <img
           className="cart__close-btn"
@@ -90,25 +97,38 @@ function Cart({ closeCart, opened, cartData, onRemoveItem }) {
                 <span>Total price:</span>
                 <span>{` $${totalPrice.toFixed(2)}`}</span>
               </p>
-              <button className="cart__order" style={{ cursor: 'pointer' }}>
+              <button
+                className="cart__order"
+                style={{ cursor: 'pointer', marginTop: 'auto' }}
+                onClick={clearCart}
+              >
                 Go to order
               </button>
             </div>
           </>
         ) : (
           <div className="cart__empty">
-            <img
-              src="i/shop/empty-cart.jpg"
-              alt="Empty cart"
-              className="cart__empty-img"
-            />
-            <p className="cart__empty-title">
-              Your cart is empty. Please, add product to cart{' '}
-            </p>
+            {isOrder ? (
+              <p className="cart__empty-title">
+                Thank you for your order. Our manager will write you{' '}
+              </p>
+            ) : (
+              <>
+                <img
+                  src="i/shop/empty-cart.jpg"
+                  alt="Empty cart"
+                  className="cart__empty-img"
+                />
+                <p className="cart__empty-title">
+                  Your cart is empty. Please, add product to cart{' '}
+                </p>
+              </>
+            )}
+
             <button
               onClick={closeCart}
               className="cart__empty-btn-close"
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', marginTop: 'auto' }}
             >
               Go back
             </button>
@@ -125,6 +145,7 @@ function App() {
     JSON.parse(localStorage.getItem('cart')) || []
   );
   const [cartOpened, setCartOpened] = React.useState(false);
+  const [isOrder, setIsOrder] = React.useState(false);
 
   React.useEffect(() => {
     async function fetchData() {
@@ -158,6 +179,11 @@ function App() {
       prevCartItems.filter((item) => item.id !== id)
     );
   };
+  const clearCart = () => {
+    setCartItems([]);
+    setIsOrder(true);
+    setTimeout(() => setIsOrder(false), 5000);
+  };
 
   return (
     <div id="shop">
@@ -170,6 +196,8 @@ function App() {
             opened={cartOpened}
             cartData={cartItems}
             onRemoveItem={onRemoveItem}
+            isOrder={isOrder}
+            clearCart={clearCart}
           />
         )}
 

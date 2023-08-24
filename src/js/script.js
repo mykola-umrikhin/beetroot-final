@@ -61,6 +61,7 @@ ssm.addState({
 // ?END MOBILE Menu
 
 ////START validate email script
+
 const inputs = document.querySelectorAll('.subscribe__email');
 const formDiv = document.querySelectorAll('.form-wrapper');
 document.addEventListener('submit', handleSubmit);

@@ -53,7 +53,7 @@ nav {
     justify-content: space-between;
     list-style: none;
     justify-items: flex-end;
-    flex-basis: 100%;
+    margin-left: auto;
   }
 
   &__right-item {
@@ -89,7 +89,7 @@ nav {
   height: 20px;
 
   position: relative;
-  margin-left: rem(20px);
+  
 }
 .menu-button.in-mobile {
   position: absolute;

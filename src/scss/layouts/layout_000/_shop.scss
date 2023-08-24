@@ -1,5 +1,6 @@
 .shop {
   margin: rem(40px) 0;
+  
 
   &__title {
     text-align: center;
@@ -40,7 +41,7 @@
     @include respm;
     margin-bottom: rem(10px);
     &-wrapper {
-     margin-top: auto; 
+      margin-top: auto;
     }
     &_big {
       @include font(rem(24px), 600);
@@ -52,7 +53,7 @@
     @include respm;
     margin: rem(8px) 0;
     margin-top: auto;
-     flex: 1;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,6 +76,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  opacity: 0;
+  // visibility: collapse;
+  transition: all 2s;
+  &_visible {
+    opacity: 1;
+    transition: all 2s;
+    // visibility: visible;
+  }
 
   &__wrapper {
     width: 90%;
